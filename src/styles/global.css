@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ============================================
+   STARBLOOM CONSULTING V2 — Global Styles
+   High-Tech Trust Palette: Deep Slates → Blues → Sharp Whites
+   ============================================ */
+
+@theme {
+  /* ── Core Palette ── */
+  --color-slate-950: #0a0f1a;
+  --color-slate-900: #0f1729;
+  --color-slate-850: #152033;
+  --color-slate-800: #1a2744;
+  --color-slate-700: #1e3255;
+
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-400: #60a5fa;
+  --color-blue-300: #93bbfd;
+
+  --color-cyan-500: #06b6d4;
+  --color-cyan-400: #22d3ee;
+
+  --color-white-soft: #f8fafc;
+  --color-white-pure: #ffffff;
+
+  /* ── Accent ── */
+  --color-accent: #3b82f6;
+  --color-accent-glow: #60a5fa;
+
+  /* ── Semantic Aliases ── */
+  --color-brand: var(--color-blue-500);
+  --color-brand-deep: var(--color-blue-600);
+  --color-brand-glow: var(--color-blue-400);
+  --color-surface-dark: var(--color-slate-950);
+  --color-surface-mid: var(--color-slate-900);
+  --color-surface-card: var(--color-slate-850);
+  --color-surface-raised: var(--color-slate-800);
+  --color-text-primary: var(--color-white-soft);
+  --color-text-muted: #94a3b8;
+  --color-border-subtle: var(--color-slate-700);
+
+  /* ── Typography ── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Sizing & Spacing ── */
+  --container-max: 1200px;
+  --section-gap: 4rem;
+}
+
+/* ── Base Layer ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-surface-dark);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Selection glow */
+  ::selection {
+    background-color: var(--color-blue-600);
+    color: var(--color-white-pure);
+  }
+
+  /* Focus rings for A11y */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-glow);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ── Utility Extensions ── */
+@utility container-site {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, var(--color-blue-300), var(--color-cyan-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility card-surface {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+@utility glow-border {
+  border: 1px solid var(--color-blue-600);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}

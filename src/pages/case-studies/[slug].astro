@@ -1,0 +1,125 @@
+---
+// StarBloom Consulting V2 — Individual Case Study Page
+// Phase 5: Dynamic [slug] route — Astro 6 Content Layer API
+
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('caseStudies');
+  return entries.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: CollectionEntry<'caseStudies'> };
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${data.title} — Case Study`}
+  description={data.description}
+  canonicalURL={`${Astro.site}/case-studies/${entry.id}`}
+>
+
+  <!-- ═══ Article Header ═══ -->
+  <article class="container-site py-16 max-w-3xl mx-auto" itemscope itemtype="https://schema.org/Article">
+    <header>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+        Case Study — {data.clientName}
+      </p>
+      <h1 itemprop="headline" class="text-3xl md:text-4xl font-black tracking-tight text-white-pure">
+        {data.title}
+      </h1>
+      <p itemprop="description" class="mt-4 text-text-muted text-base leading-relaxed">
+        {data.description}
+      </p>
+
+      <!-- Meta -->
+      <div class="mt-6 flex flex-wrap items-center gap-4 text-xs text-text-muted border-b border-slate-700/50 pb-6">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+          By <span itemprop="name" class="text-white-pure font-medium">{data.author}</span>
+        </span>
+        <span aria-hidden="true">·</span>
+        <time itemprop="datePublished" datetime={data.pubDate.toISOString().split('T')[0]}>
+          {data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        {data.tags && data.tags.length > 0 && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span class="flex flex-wrap gap-1.5">
+              {data.tags.map(tag => (
+                <span class="px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-text-muted">{tag}</span>
+              ))}
+            </span>
+          </>
+        )}
+      </div>
+
+      <!-- Key Metrics Highlight Bar -->
+      {data.metrics.length > 0 && (
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {data.metrics.slice(0, 4).map(metric => (
+            <div class="flex items-start gap-2 px-4 py-3 rounded-lg bg-slate-850 border border-slate-700/50">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span class="text-sm text-white-pure font-medium">{metric}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <!-- ═══ Article Body ═══ -->
+    <div itemprop="articleBody" class="mt-10 prose prose-invert prose-slate max-w-none
+      prose-headings:text-white-pure
+      prose-h2:text-2xl prose-h2:font-black prose-h2:mt-12 prose-h2:mb-4
+      prose-h3:text-xl prose-h3:font-bold prose-h3:mt-8 prose-h3:mb-3
+      prose-p:text-text-muted prose-p:leading-relaxed
+      prose-li:text-text-muted
+      prose-strong:text-white-pure
+      prose-a:text-accent prose-a:no-underline hover:prose-a:text-blue-400
+      prose-table:border-collapse prose-th:bg-slate-800 prose-th:text-white-pure prose-th:px-4 prose-th:py-2 prose-th:text-sm prose-td:border prose-td:border-slate-700 prose-td:px-4 prose-td:py-2 prose-td:text-sm prose-td:text-text-muted
+      prose-code:text-blue-300 prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+      prose-blockquote:border-blue-600 prose-blockquote:text-text-muted prose-blockquote:bg-slate-900 prose-blockquote:px-4 prose-blockquote:py-2 prose-blockquote:rounded-r-lg
+    ">
+      <Content />
+    </div>
+  </article>
+
+  <!-- ═══ Back Link ═══ -->
+  <div class="container-site pb-16 max-w-3xl mx-auto">
+    <a href="/case-studies" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-white-pure transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      All Case Studies
+    </a>
+  </div>
+
+  <!-- ═══ TechArticle JSON-LD Schema ═══ -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": data.title,
+    "description": data.description,
+    "datePublished": data.pubDate.toISOString().split('T')[0],
+    "author": {
+      "@type": "Person",
+      "name": data.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "StarBloom Consulting",
+      "url": Astro.site
+    },
+    "url": `${Astro.site}/case-studies/${entry.id}`,
+    "about": data.tags || [],
+    "proficiencyLevel": "Expert",
+    "articleSection": "Case Study"
+  })}>
+  </script>
+</Layout>

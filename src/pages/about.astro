@@ -1,0 +1,331 @@
+---
+// StarBloom Consulting V2 — About Page
+// Phase 3: E-E-A-T Entity Validation, Founder Profile, AboutPage + ProfilePage Schema
+
+import Layout from '../layouts/Layout.astro';
+
+// ── Entity data for both page copy and structured data ──
+const founder = {
+  name: "Darren",
+  givenName: "Darren",
+  jobTitle: "Founder & Lead Architect",
+  description: "Darren has spent over two decades on the front lines of operations — construction superintending, regional erosion control management, behavior intervention for vulnerable populations, and directing large-scale agricultural facilities. He has designed and managed 21-room rotational grow operations with teams of 50, built every SOP from scratch, and synchronized entire production pipelines from clone to cure. That operational depth is what he brings to AI deployment: not theoretical knowledge, but the hard-won instinct of someone who has run real crews on real deadlines with real consequences. He translates hardware into infrastructure, software into workflow, and complexity into something a crew lead can use without a manual.",
+  image: "/images/darren.jpg",
+  sameAs: [
+    "https://starbloomconsulting.com/about"
+  ],
+  knowsAbout: [
+    "Private AI Infrastructure Deployment",
+    "Air-Gapped Cluster Architecture",
+    "Local LLM Orchestration",
+    "Hardware-to-Software Translation",
+    "Operational Workflow Automation",
+    "On-Premise Data Security",
+    "Open-Source Model Selection & Fine-Tuning",
+    "Docker Container Orchestration",
+    "n8n Workflow Automation"
+  ]
+};
+
+const organization = {
+  name: "StarBloom Consulting",
+  foundingDate: "2025",
+  description: "StarBloom Consulting deploys private AI infrastructure on client-owned hardware. We are a software-only firm — no hardware sales, no cloud lock-in, no data harvesting. Built by operators, for operators.",
+  foundingLocation: "Maryland, USA",
+  areaServed: "United States",
+  knowsAbout: [
+    "Private AI Deployment",
+    "On-Premise LLM Orchestration",
+    "Air-Gapped Computing",
+    "Open-Source AI Agents",
+    "Workflow Automation",
+    "Local Model Fine-Tuning"
+  ]
+};
+
+const credentials = [
+  {
+    category: "Operations Leadership",
+    items: [
+      "20+ years managing labor crews, construction sites, and production facilities",
+      "Directed 50-person teams across 21-room rotational production environments",
+      "Designed and implemented full SOP libraries from scratch — zero-downtime scheduling"
+    ]
+  },
+  {
+    category: "Technical Infrastructure",
+    items: [
+      "Architected and deployed private AI clusters on consumer and prosumer hardware",
+      "Configured air-gapped LLM environments with zero outbound API dependencies",
+      "Built multi-node Kubernetes-style orchestration for local model serving",
+      "Integrated Docker, n8n, Open WebUI, and Ollama into cohesive private stacks"
+    ]
+  },
+  {
+    category: "Software & Automation",
+    items: [
+      "Developed autonomous AI agent frameworks for operational data processing",
+      "Built automated lead-generation pipelines processing thousands of signals daily",
+      "Created custom workflow automations replacing manual data entry across multiple verticals"
+    ]
+  }
+];
+
+const values = [
+  {
+    title: "No Cloud, No Compromise",
+    body: "We do not route your data through third-party servers. Every model, every agent, every pipeline runs on hardware you control. If it can't run locally, we don't deploy it."
+  },
+  {
+    title: "Open-Source by Default",
+    body: "Everything we build is inspectable. No proprietary black boxes. You own the code, the configs, and the models. We provide documentation, not vendor lock-in."
+  },
+  {
+    title: "Operator-First Design",
+    body: "We do not build dashboards for data scientists. We build tools for foremen, crew leads, farm managers, and small business owners — people who need AI to work without needing a PhD to operate it."
+  },
+  {
+    title: "Transparent Pricing",
+    body: "One flat engagement fee. No per-seat licensing, no usage-based billing, no surprise invoices. You know the cost before we touch a single config file."
+  }
+];
+---
+
+<Layout
+  title="About StarBloom Consulting — Built by Operators, for Operators"
+  description="StarBloom Consulting deploys private AI infrastructure on your hardware. Founded by operators, not venture capitalists. Air-gapped clusters, local LLMs, open-source orchestration. No cloud dependency."
+  canonicalURL={`${Astro.site}/about`}
+>
+
+  <!-- ==========================================
+       PAGE HEADER
+       ========================================== -->
+  <section class="relative overflow-hidden border-b border-slate-700/30" aria-labelledby="about-heading">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="container-site py-20 relative z-10 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">About</p>
+      <h1 id="about-heading" class="text-4xl md:text-5xl font-black tracking-tight text-white-pure">
+        Built by <span class="text-gradient">Operators</span>,<br class="sm:hidden" /> for Operators.
+      </h1>
+      <p class="mt-6 text-text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        We are not a VC-backed SaaS startup. We are not AI influencers. We are operators who learned to deploy private AI because the alternatives — cloud APIs, data harvesting, per-seat pricing — were unacceptable for real businesses running real operations.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ORIGIN STORY
+       ========================================== -->
+  <section class="container-site py-20" aria-labelledby="story-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="story-heading" class="text-3xl font-black text-white-pure tracking-tight">
+        The Problem We Solve
+      </h2>
+      <div class="mt-8 space-y-5 text-text-muted leading-relaxed">
+        <p>
+          Most businesses generating operational data — schedules, inventory logs, compliance documents, maintenance records, crew reports — have no practical way to apply AI to it. The tools exist. The models exist. But the bridge between a dusty server rack in a back office and a working AI agent that actually saves time? That bridge doesn't build itself.
+        </p>
+        <p>
+          The mainstream AI industry has one answer: ship your data to the cloud. Upload it to our API. Trust our infrastructure. Pay per token, per seat, per month — forever.
+        </p>
+        <p class="text-white-pure font-medium">
+          We rejected that answer.
+        </p>
+        <p>
+          StarBloom Consulting was founded on a simple principle: <strong class="text-white-pure">if you own the hardware, you should own the AI.</strong> The models are open-source. The orchestration tools are mature. The missing piece is someone who speaks both languages — the language of the shop floor and the language of the terminal — and can translate between them.
+        </p>
+        <p>
+          That's what we do. We take commodity hardware, open-source models, and battle-tested orchestration tooling, and we assemble it into a private AI system that lives entirely inside your four walls. No cloud. No subscriptions. No data leakage. Just working AI on your terms.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOUNDER PROFILE
+       ========================================== -->
+  <section class="bg-slate-900 border-y border-slate-700/30" aria-labelledby="founder-heading">
+    <div class="container-site py-20">
+      <div class="max-w-4xl mx-auto">
+        <h2 id="founder-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
+          Meet the Architect
+        </h2>
+
+        <div class="mt-12 flex flex-col md:flex-row gap-10 items-start">
+          <!-- Avatar placeholder -->
+          <div class="flex-shrink-0 mx-auto md:mx-0">
+            <div class="w-32 h-32 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <p class="mt-3 text-center text-sm text-text-muted">
+              {founder.jobTitle}
+            </p>
+          </div>
+
+          <!-- Bio -->
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-white-pure">{founder.name}</h3>
+            <p class="mt-1 text-sm text-accent font-semibold">{founder.jobTitle}</p>
+            <div class="mt-5 space-y-4 text-text-muted leading-relaxed">
+              <p>{founder.description}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competency tags -->
+        <div class="mt-10 max-w-4xl mx-auto">
+          <h4 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Core Competencies</h4>
+          <div class="flex flex-wrap gap-2">
+            {founder.knowsAbout.map(skill => (
+              <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-text-muted font-medium">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CREDENTIALS — Three pillars
+       ========================================== -->
+  <section class="container-site py-20" aria-labelledby="credentials-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="credentials-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
+        Operational Credentials
+      </h2>
+      <p class="mt-4 text-center text-text-muted text-sm max-w-xl mx-auto">
+        We bring hands-on experience from the trades, not a conference badge.
+      </p>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {credentials.map(col => (
+          <div class="card-surface">
+            <h3 class="text-base font-bold text-white-pure mb-3">{col.category}</h3>
+            <ul class="space-y-2.5">
+              {col.items.map(item => (
+                <li class="flex items-start gap-2 text-sm text-text-muted leading-relaxed">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VALUES — What we stand on
+       ========================================== -->
+  <section class="bg-slate-900 border-y border-slate-700/30" aria-labelledby="values-heading">
+    <div class="container-site py-20">
+      <div class="max-w-4xl mx-auto">
+        <h2 id="values-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
+          What We Stand On
+        </h2>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {values.map(v => (
+            <div class="card-surface hover:glow-border transition-all duration-300">
+              <h3 class="text-lg font-bold text-white-pure">{v.title}</h3>
+              <p class="mt-2 text-sm text-text-muted leading-relaxed">{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CLOSING CTA
+       ========================================== -->
+  <section class="container-site py-20 text-center" aria-labelledby="about-cta-heading">
+    <h2 id="about-cta-heading" class="text-3xl font-black text-white-pure tracking-tight">
+      Let's talk about <span class="text-gradient">your hardware.</span>
+    </h2>
+    <p class="mt-4 text-text-muted max-w-lg mx-auto">
+      If you have machines and a problem to solve, we can have private AI running on them within a week. No sales deck. No demo environment. Just a conversation.
+    </p>
+    <div class="mt-8">
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-2xl shadow-blue-600/30 hover:bg-blue-600 transition-all duration-200 hover:shadow-blue-500/50"
+      >
+        Book a Discovery Call — $950 Flat
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STRUCTURED DATA: AboutPage + ProfilePage
+       ========================================== -->
+  <script type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About StarBloom Consulting",
+      "url": `${Astro.site}/about`,
+      "description": organization.description,
+      "about": {
+        "@type": "Organization",
+        "name": organization.name,
+        "foundingDate": organization.foundingDate,
+        "foundingLocation": organization.foundingLocation,
+        "areaServed": organization.areaServed,
+        "description": organization.description,
+        "knowsAbout": organization.knowsAbout.map(t => t),
+        "url": Astro.site,
+        "founder": {
+          "@type": "Person",
+          "name": founder.name,
+          "givenName": founder.givenName,
+          "jobTitle": founder.jobTitle,
+          "description": founder.description,
+          "knowsAbout": founder.knowsAbout,
+          "sameAs": founder.sameAs
+        }
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "name": organization.name,
+        "foundingDate": organization.foundingDate,
+        "founder": {
+          "@type": "Person",
+          "name": founder.name,
+          "jobTitle": founder.jobTitle,
+          "knowsAbout": founder.knowsAbout
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "name": `${founder.name} — ${founder.jobTitle}`,
+      "url": `${Astro.site}/about`,
+      "mainEntity": {
+        "@type": "Person",
+        "name": founder.name,
+        "givenName": founder.givenName,
+        "jobTitle": founder.jobTitle,
+        "description": founder.description,
+        "knowsAbout": founder.knowsAbout,
+        "sameAs": founder.sameAs,
+        "worksFor": {
+          "@type": "Organization",
+          "name": organization.name,
+          "url": Astro.site
+        }
+      }
+    }
+  ])}>
+  </script>
+
+</Layout>

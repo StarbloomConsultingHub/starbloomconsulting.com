@@ -1,0 +1,99 @@
+---
+// StarBloom Consulting V2 — Blog Index Page
+// Phase 5: Aggregates all blog posts from content collection
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Blog — Private AI, Sovereign Hardware & Operational Insights"
+  description="Technical insights from StarBloom Consulting on private AI deployment, on-premise LLMs, air-gapped computing, open-source orchestration, and operational automation for real businesses."
+  canonicalURL={`${Astro.site}/blog`}
+>
+  <!-- ═══ Page Header ═══ -->
+  <section class="relative overflow-hidden border-b border-slate-700/30" aria-labelledby="blog-heading">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="container-site py-20 relative z-10 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">Insights</p>
+      <h1 id="blog-heading" class="text-4xl md:text-5xl font-black tracking-tight text-white-pure">
+        The <span class="text-gradient">Blog</span>
+      </h1>
+      <p class="mt-4 text-text-muted text-base max-w-xl mx-auto">
+        Technical perspectives on private AI, sovereign hardware, and operational automation — written by operators, for operators.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ Blog Post Cards ═══ -->
+  <section class="container-site py-16">
+    {sorted.length === 0 ? (
+      <div class="text-center py-16">
+        <p class="text-text-muted">No posts yet. Insights are brewing — check back soon.</p>
+      </div>
+    ) : (
+      <div class="max-w-3xl mx-auto space-y-6">
+        {sorted.map(entry => (
+          <a
+            href={`/blog/${entry.id}`}
+            class="card-surface group hover:glow-border transition-all duration-300 block no-underline"
+          >
+            <div class="flex flex-wrap items-center gap-3 text-xs text-text-muted mb-3">
+              <time datetime={entry.data.pubDate.toISOString().split('T')[0]}>
+                {entry.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <span aria-hidden="true">·</span>
+              <span>{entry.data.readingTime}</span>
+              <span aria-hidden="true">·</span>
+              <span>{entry.data.author}</span>
+            </div>
+            <h2 class="text-xl font-bold text-white-pure group-hover:text-accent transition-colors duration-200">
+              {entry.data.title}
+            </h2>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed">
+              {entry.data.description}
+            </p>
+            {entry.data.tags && entry.data.tags.length > 0 && (
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                {entry.data.tags.map(tag => (
+                  <span class="px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-xs text-text-muted">{tag}</span>
+                ))}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <!-- ═══ ItemList JSON-LD Schema ═══ -->
+  {sorted.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "StarBloom Consulting Blog",
+      "description": "Technical insights on private AI deployment, on-premise LLMs, air-gapped computing, and operational automation.",
+      "url": `${Astro.site}/blog`,
+      "numberOfItems": sorted.length,
+      "itemListElement": sorted.map((entry, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "item": {
+          "@type": "Article",
+          "name": entry.data.title,
+          "url": `${Astro.site}/blog/${entry.id}`,
+          "description": entry.data.description,
+          "author": {
+            "@type": "Person",
+            "name": entry.data.author
+          },
+          "datePublished": entry.data.pubDate.toISOString().split('T')[0]
+        }
+      }))
+    })}>
+    </script>
+  )}
+</Layout>

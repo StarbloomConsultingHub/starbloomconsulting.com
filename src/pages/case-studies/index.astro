@@ -1,0 +1,101 @@
+---
+// StarBloom Consulting V2 — Case Studies Index Page
+// Phase 5: Aggregates all case studies from content collection
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const caseStudies = await getCollection('caseStudies');
+// Sort by date descending
+const sorted = caseStudies.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Case Studies — Private AI Deployments in the Field"
+  description="Real-world private AI deployments by StarBloom Consulting. On-premise LLMs, air-gapped clusters, route optimization, inventory forecasting, and workflow automation — built on client-owned hardware."
+  canonicalURL={`${Astro.site}/case-studies`}
+>
+  <!-- ═══ Page Header ═══ -->
+  <section class="relative overflow-hidden border-b border-slate-700/30" aria-labelledby="cases-heading">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="container-site py-20 relative z-10 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">Evidence</p>
+      <h1 id="cases-heading" class="text-4xl md:text-5xl font-black tracking-tight text-white-pure">
+        Case <span class="text-gradient">Studies</span>
+      </h1>
+      <p class="mt-4 text-text-muted text-base max-w-xl mx-auto">
+        Real deployments. Real hardware. Real results — with zero cloud dependency.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ Case Study Cards ═══ -->
+  <section class="container-site py-16">
+    {sorted.length === 0 ? (
+      <div class="text-center py-16">
+        <p class="text-text-muted">Case studies coming soon. Deployments are happening — documentation in progress.</p>
+      </div>
+    ) : (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {sorted.map(entry => (
+          <a
+            href={`/case-studies/${entry.id}`}
+            class="card-surface group hover:glow-border transition-all duration-300 block no-underline"
+          >
+            <!-- Metrics preview -->
+            {entry.data.metrics.length > 0 && (
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                {entry.data.metrics.slice(0, 2).map(m => (
+                  <span class="px-2 py-0.5 rounded-md bg-blue-600/10 border border-blue-600/20 text-xs text-blue-300 font-medium">
+                    {m.length > 80 ? m.slice(0, 80) + '...' : m}
+                  </span>
+                ))}
+              </div>
+            )}
+            <h2 class="text-xl font-bold text-white-pure group-hover:text-accent transition-colors duration-200">
+              {entry.data.title}
+            </h2>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed">
+              {entry.data.description}
+            </p>
+            <div class="mt-4 flex items-center gap-3 text-xs text-text-muted">
+              <span>{entry.data.clientName}</span>
+              <span aria-hidden="true">·</span>
+              <time datetime={entry.data.pubDate.toISOString().split('T')[0]}>
+                {entry.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+
+  <!-- ═══ ItemList JSON-LD Schema ═══ -->
+  {sorted.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "StarBloom Consulting Case Studies",
+      "description": "Real-world private AI deployments by StarBloom Consulting — on-premise LLMs, air-gapped clusters, and workflow automation built on client-owned hardware.",
+      "url": `${Astro.site}/case-studies`,
+      "numberOfItems": sorted.length,
+      "itemListElement": sorted.map((entry, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "item": {
+          "@type": "Article",
+          "name": entry.data.title,
+          "url": `${Astro.site}/case-studies/${entry.id}`,
+          "description": entry.data.description,
+          "author": {
+            "@type": "Person",
+            "name": entry.data.author
+          },
+          "datePublished": entry.data.pubDate.toISOString().split('T')[0]
+        }
+      }))
+    })}>
+    </script>
+  )}
+</Layout>
