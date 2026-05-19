@@ -11,6 +11,12 @@ dist/
 .env
 .env.*
 
+# Token caches & secrets
+data/*.md
+data/*.json
+data/*.jsonl
+data/secrets/
+
 # OS
 .DS_Store
 Thumbs.db
