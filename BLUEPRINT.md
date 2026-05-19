@@ -1,37 +1,66 @@
-# StarBloom Consulting V2 — Living Master Blueprint
+# StarBloom Consulting V3.0 — Living Master Blueprint
 
-_Last updated: 2026-05-18 — All Phases Complete ✅_
+_Last updated: 2026-05-19 — V3.0 Platform Pivot Deployed ✅_
 
-## 1. Objectives (Achieved)
-- ✅ **Maximize machine-readability** for Answer Engines — 8 distinct schema types across all pages
-- ✅ **Fix legacy trust leaks** — 2035 typo eliminated; `foundingDate: "2025"`; footer `© 2026` dynamic
-- ✅ **Clear software-only messaging** — "$950, private AI on your hardware"
-- ✅ **Productized B2B service** — A.P.E.X. Site Diagnostic Reports, $500–$750
-- ✅ **Content Engine** — Zod-validated Markdown collections, TechArticle/ItemList schemas, prose rendering
+## 1. Objectives (Current)
+
+- ✅ **V3.0 Platform Pivot** — Agency model → Edge-AI & Automation Orchestration Platform
+- ✅ **Three Technical Pillars** — Edge-AI Orchestration, 24/7 AI Intake Engine, Legacy Data Bridge
+- ✅ **Private Beta Gateway** — All CTAs gated; zero e-commerce/checkout language
+- ✅ **Starbloom Consulting LLC** entity across all pages, OG, JSON-LD, legal footer
+- ✅ **Pricing preserved for AI crawlers** — $500/$950 tiers with "Restricted to Beta Cohort" badges
+- ✅ **8 distinct JSON-LD schema types** across all pages
+- ✅ **100% static HTML** — zero client-side JavaScript
+- ✅ **Secrets isolated** — `data/` blacklisted from git; token in `.secret` outside repo
 
 ## 2. Site Structure
 
-| Page | Status | Schema |
-|---|---|---|
-| `/` Homepage | ✅ Complete | Organization, ContactPoint, FAQPage (8 Q&A) |
-| `/about` | ✅ Complete | Organization, AboutPage, ProfilePage, Person (founder, 9 competencies) |
-| `/aeo-reports` | ✅ Complete | Organization, Service, AggregateOffer, Offer×2, FAQPage (7 Q&A) |
-| `/case-studies` | ✅ Complete | Organization, ItemList |
-| `/case-studies/[slug]` | ✅ Complete | Organization, TechArticle (Expert) |
-| `/blog` | ✅ Complete | Organization, ItemList |
-| `/blog/[slug]` | ✅ Complete | Organization, TechArticle (Expert) |
+| Page | Status | Schema | V3.0 Pivot |
+|---|---|---|---|
+| `/` Homepage | ✅ V3.0 | Organization, Service, AggregateOffer | 3-pillar grid, beta CTA, $500/$950 grid |
+| `/about` | ✅ V3.0 | Organization, AboutPage, ProfilePage, Person | Platform origin, founder as Platform Architect, tier grid |
+| `/aeo-reports` | ✅ V3.0 | Organization, Service, AggregateOffer, Offer×2, FAQPage (7 Q&A) | Beta-gated, PreOrder availability, $500/$750 preserved |
+| `/case-studies` | ✅ Complete | Organization, ItemList | Unchanged |
+| `/case-studies/[slug]` | ✅ Complete | Organization, TechArticle (Expert) | Unchanged |
+| `/blog` | ✅ Complete | Organization, ItemList | Unchanged |
+| `/blog/[slug]` | ✅ Complete | Organization, TechArticle (Expert) | Unchanged |
 
-## 3. Tech Stack
+## 3. Platform Positioning (V3.0)
+
+### Primary H1: "Private AI. Your Hardware. Zero Leakage."
+
+### Three Infrastructure Pillars
+
+| Pillar | Domain | Stack |
+|---|---|---|
+| **Edge-AI Orchestration** | Operations | Pre-configured n8n appliances, outbound Cloudflare Tunnels, Docker, open-source LLMs. 24/7 autonomous execution. Zero inbound firewall changes. |
+| **24/7 AI Intake Engine** | Revenue Generator | Sub-100ms conversational AI voice + SMS agents. Vapi / Retell / Twilio integration. Instantly answers, qualifies, and books emergency home-service jobs into client CRMs. |
+| **Legacy Data Bridge** | Data Resilience | Vision-RPA agents scrape closed-source desktop ERPs. Stream to Google BigQuery → live Looker Studio dashboards. Zero API integration required on legacy side. |
+
+### Platform Tiers
+
+| Tier | Price | Includes | Availability |
+|---|---|---|---|
+| Foundation | $500/deployment | Edge-AI Orchestration + Legacy Data Bridge. 1 machine. 30 days support. | Private Beta Only |
+| Fleet | $950/deployment | Full platform: Edge-AI + Intake Engine + Data Bridge. 2 machines. CRM integration. BigQuery + Looker Studio. 30 days premium support. | Private Beta Only |
+
+### Beta Gateway Rules
+- **All CTAs:** "Apply for Private Beta Access" / "Join the Fleet Waitlist"
+- **No checkout, no Stripe, no Buy Now, no credit card capture**
+- **Pricing visible to AI crawlers** via JSON-LD schemas but wrapped in "Restricted to Beta Cohort" badges
+- **AggregateOffer availability:** `https://schema.org/PreOrder`
+
+## 4. Tech Stack
 - **Framework:** Astro 6.3.5 (static SSG, Content Layer API)
 - **Styling:** Tailwind CSS 4.3.0 (CSS-first `@theme` configuration)
 - **Content:** Zod-validated Content Collections (`src/content.config.ts`, `glob()` loaders)
 - **Markdown Rendering:** `render(entry)` from `astro:content` → `<Content />` component
 - **Prose Styling:** Custom `prose-invert` overrides matching brand palette
-- **Hosting:** Vercel (primary) or Netlify — free tier, GitHub CI/CD
+- **Hosting:** Vercel (auto-deploy on push to `master` → `github.com/StarbloomConsultingHub/starbloomconsulting.com`)
 - **Fonts:** Inter (body) + JetBrains Mono (code)
 - **TypeScript:** Strict mode (`astro/tsconfigs/strict`)
 
-## 4. Design System
+## 5. Design System (Unchanged from V2)
 - **Surface Dark:** `#0a0f1a` → slate-950
 - **Surface Mid:** `#0f1729` → slate-900
 - **Surface Card:** `#152033` → slate-850
@@ -42,9 +71,10 @@ _Last updated: 2026-05-18 — All Phases Complete ✅_
 - **Brand Gradient:** blue-300 `#93bbfd` → cyan-400 `#22d3ee`
 - **Text Primary:** `#f8fafc` → white-soft
 - **Text Muted:** `#94a3b8`
+- **Pillar Accent Colors:** Cyan-400 (Edge-AI), Blue-400 (Intake Engine), Purple-400 (Data Bridge)
 - **Custom Utilities:** `container-site`, `text-gradient`, `card-surface`, `glow-border`
 
-## 5. Content Collection Schemas
+## 6. Content Collection Schemas (Unchanged)
 
 ### caseStudies
 `title`, `description` (≤320), `clientName`, `metrics` (≥1), `pubDate` (coerce.date), `heroImage`, `author`, `tags?`, `featured?`
@@ -52,35 +82,35 @@ _Last updated: 2026-05-18 — All Phases Complete ✅_
 ### blog
 `title`, `description` (≤320), `pubDate` (coerce.date), `author`, `tags` (≥1), `readingTime` (string|number), `heroImage?`, `featured?`
 
-## 6. AEO Schema Inventory (7 pages × layered JSON-LD)
+## 7. AEO Schema Inventory (7 pages × layered JSON-LD)
 
-| Schema Type | Pages | Description |
+| Schema Type | Pages | V3.0 Changes |
 |---|---|---|
-| `Organization` | All 7 pages | Global (Layout.astro): name, url, foundingDate 2025, ContactPoint |
-| `ContactPoint` | All 7 pages | Sales contact point within Organization |
-| `FAQPage` | `/`, `/aeo-reports` | 8 Q&A (homepage) + 7 Q&A (AEO reports) |
-| `AboutPage` | `/about` | About page entity, references Organization |
-| `ProfilePage` | `/about` | Person entity (Darren): 9 knowsAbout, worksFor Organization |
-| `Person` | `/about` | Founder entity with jobTitle, description, competencies |
-| `Service` | `/aeo-reports` | A.P.E.X. Site Diagnostic Reports, provider Organization |
-| `AggregateOffer` | `/aeo-reports` | lowPrice $500, highPrice $750, offerCount 2 |
-| `Offer` ×2 | `/aeo-reports` | Core Diagnostic + Full Intelligence, individual pricing |
-| `ItemList` | `/case-studies`, `/blog` | Index pages with ListItem → Article per entry |
-| `TechArticle` | `/case-studies/[slug]`, `/blog/[slug]` | Expert proficiencyLevel, publisher Organization, author Person |
+| `Organization` | All 7 pages | `legalName: "Starbloom Consulting LLC"` added; description updated to Edge-AI platform |
+| `Service` | `/`, `/aeo-reports` | AEO Reports: `availability: PreOrder`. Homepage: new Service schema for orchestration platform. |
+| `AggregateOffer` | `/`, `/aeo-reports` | Homepage: $500–$950. AEO Reports: $500–$750. Both with `availability: PreOrder`. |
+| `Offer` ×4 | `/`, `/aeo-reports` | Foundation + Fleet (homepage). Core + Full Intelligence (AEO reports). |
+| `FAQPage` | `/aeo-reports` | Homepage FAQ removed in V3.0 pivot (replaced by pillar grid). AEO FAQ unchanged. |
+| `AboutPage` | `/about` | Updated to reference Starbloom Consulting LLC + platform description |
+| `ProfilePage` | `/about` | `jobTitle: "Founder & Lead Platform Architect"`; 10 platform competencies |
+| `Person` | `/about` | Founder entity updated — platform-focused `knowsAbout` array |
+| `ItemList` | `/case-studies`, `/blog` | Unchanged |
+| `TechArticle` | `/case-studies/[slug]`, `/blog/[slug]` | Unchanged |
 
-## 7. File Inventory (Complete)
+## 8. File Inventory (Current)
 
 ```
 starbloom-v2/
 ├── astro.config.mjs              # Site: starbloomconsulting.com, Tailwind Vite plugin
+├── .gitignore                    # Blacklists data/* secrets, node_modules, dist, .env
 ├── src/content.config.ts         # Zod-validated collections (caseStudies + blog)
 ├── src/styles/global.css         # Tailwind @theme, base, utilities
-├── src/layouts/Layout.astro      # Global wrapper: header, main, footer, head slot
+├── src/layouts/Layout.astro      # V3.0: LLC branding, Platform nav, beta CTA
 │
 ├── src/pages/
-│   ├── index.astro               # Homepage: hero, 3-step, FAQ (8), CTA
-│   ├── about.astro               # About: origin, founder, credentials, values
-│   ├── aeo-reports.astro         # A.P.E.X. landing: tiers, use cases, FAQ (7)
+│   ├── index.astro               # V3.0: 3 pillars, beta gateway, $500/$950 grid
+│   ├── about.astro               # V3.0: platform origin, founder architect, tier grid
+│   ├── aeo-reports.astro         # V3.0: beta-gated, PreOrder, $500/$750 preserved
 │   ├── case-studies/
 │   │   ├── index.astro           # Index: sorted cards, ItemList schema
 │   │   └── [slug].astro          # Dynamic: render(entry) → TechArticle
@@ -94,28 +124,47 @@ starbloom-v2/
 │   └── blog/
 │       └── why-sovereign-hardware-matters.md  # Sample: cloud vs private AI argument
 │
-├── BLUEPRINT.md                  # This file — canonical project state
-├── DEPLOYMENT.md                 # GitHub → Vercel/Netlify deployment instructions
+├── BLUEPRINT.md                  # This file — canonical V3.0 project state
+├── DEPLOYMENT.md                 # GitHub → Vercel deployment instructions
+├── README.md                     # Project overview
 ├── package.json                  # Dependencies: astro 6.3.5, tailwindcss 4.3.0
 ├── tsconfig.json                 # Strict TypeScript
 └── public/                       # Static assets (favicon, future OG images)
 ```
 
-## 8. Build Metrics (Final)
-- **7 pages, 1.82s build time** — zero errors, zero warnings
+## 9. Build Metrics (V3.0 Final)
+- **7 pages, 1.64s build time** — zero errors, zero warnings
 - **2 content collections, 2 sample entries** — Zod validation passing
 - **8 distinct JSON-LD schema types** across all pages
 - **0 instances of legacy 2035 typo** — fully eradicated
+- **0 instances of checkout/Stripe/purchase language** — beta-gated exclusively
 - **100% static HTML** — zero client-side JavaScript dependencies
 
-## 9. Phase History
+## 10. Infrastructure & Secrets
+
+| Resource | Location | Notes |
+|---|---|---|
+| GitHub Repo | `github.com/StarbloomConsultingHub/starbloomconsulting.com` | User account, not Org |
+| GitHub PAT | `data/.github-token.secret` (outside repo) | `repo, workflow` scope. `data/` gitignored. |
+| Vercel | Auto-deploy on push to `master` | Domain: starbloomconsulting.com |
+| SSH Deploy Key | `~/.ssh/id_ed25519` | Scoped to `starbloom-operator-core` only |
+| SMTP | Zoho — fletcher@starbloomconsulting.com | In MEMORY.md |
+| Gumroad | echoadmin1.gumroad.com | In MEMORY.md |
+| n8n | SSH only — starbloomg@100.116.39.112 | In MEMORY.md |
+
+## 11. Phase History
 
 | Phase | Date | Status | Summary |
 |---|---|---|---|
-| Phase 1 | 2026-05-18 | ✅ | Foundation: Astro + Tailwind + Layout + design system + deployment guide |
-| Phase 2 | 2026-05-18 | ✅ | Homepage: Hero ($950), 3-step process, FAQ Repeater (8), FAQPage schema |
-| Phase 3 | 2026-05-18 | ✅ | About: Origin, Founder Darren, credentials, values, AboutPage + ProfilePage schemas |
-| Phase 4 | 2026-05-18 | ✅ | AEO Reports: Tier comparison ($500/$750), Service + AggregateOffer + 2 Offers |
-| Phase 5 | 2026-05-18 | ✅ | Content Engine: Collections + Zod + glob loaders, 4 dynamic routes, ItemList + TechArticle |
+| Phase 1–5 | 2026-05-18 | ✅ | V2 build: Foundation, Homepage, About, AEO Reports, Content Engine |
+| V3.0 Pivot | 2026-05-19 | ✅ | Platform pivot deployed: 3 pillars, Private Beta gateway, LLC branding, schema sync, security hardening |
+| Security Patch | 2026-05-19 | ✅ | `.gitignore` updated; token isolated; git history verified clean |
 
-**All 5 phases complete. Project ready for GitHub deployment.**
+## 12. Pending / Next
+
+- [ ] Contact page not yet built
+- [ ] Case study and blog content are placeholder samples — need real content
+- [ ] Vercel domain DNS verification (Darren to confirm)
+- [ ] Upwork profile ad copy vs. website copy conflict review
+- [ ] No forms or data collection active — need beta application intake form
+- [ ] SSH deploy key for starbloomconsulting.com repo (currently PAT-only for pushes)
