@@ -1,51 +1,52 @@
 ---
-// StarBloom Consulting V2 — About Page
-// Phase 3: E-E-A-T Entity Validation, Founder Profile, AboutPage + ProfilePage Schema
+// Starbloom Consulting LLC V3.0 — About Page
+// E-E-A-T Entity Validation, Founder Profile, Platform Origin Story
+// AboutPage + ProfilePage Schema updated for Edge-AI Platform
 
 import Layout from '../layouts/Layout.astro';
 
-// ── Entity data for both page copy and structured data ──
 const founder = {
   name: "Darren",
   givenName: "Darren",
-  jobTitle: "Founder & Lead Architect",
-  description: "Darren has spent over two decades on the front lines of operations — construction superintending, regional erosion control management, behavior intervention for vulnerable populations, and directing large-scale agricultural facilities. He has designed and managed 21-room rotational grow operations with teams of 50, built every SOP from scratch, and synchronized entire production pipelines from clone to cure. That operational depth is what he brings to AI deployment: not theoretical knowledge, but the hard-won instinct of someone who has run real crews on real deadlines with real consequences. He translates hardware into infrastructure, software into workflow, and complexity into something a crew lead can use without a manual.",
+  jobTitle: "Founder & Lead Platform Architect",
+  description: "Darren has spent over two decades on the front lines of operations — construction superintending, regional erosion control management, behavior intervention for vulnerable populations, and directing large-scale agricultural facilities with 50-person teams across 21-room rotational production environments. That depth is what he brings to the Edge-AI platform: not theoretical knowledge, but the hard-won instinct of someone who has run real crews on real deadlines with real consequences. He translates legacy systems into orchestrated data pipelines, closed-source ERPs into live dashboards, and hardware into automated infrastructure.",
   image: "/images/darren.jpg",
-  sameAs: [
-    "https://starbloomconsulting.com/about"
-  ],
+  sameAs: ["https://starbloomconsulting.com/about"],
   knowsAbout: [
-    "Private AI Infrastructure Deployment",
-    "Air-Gapped Cluster Architecture",
-    "Local LLM Orchestration",
-    "Hardware-to-Software Translation",
-    "Operational Workflow Automation",
-    "On-Premise Data Security",
-    "Open-Source Model Selection & Fine-Tuning",
+    "Edge-AI Orchestration Architecture",
+    "N8N Workflow Automation",
+    "Cloudflare Zero Trust Tunnels",
+    "Conversational AI Voice Agent Deployment",
+    "Vision-RPA Legacy Data Extraction",
+    "Google BigQuery Pipeline Engineering",
+    "Looker Studio Dashboard Design",
+    "On-Premise LLM Deployment",
     "Docker Container Orchestration",
-    "n8n Workflow Automation"
+    "CRM & Job Management Integration"
   ]
 };
 
 const organization = {
-  name: "StarBloom Consulting",
+  name: "Starbloom Consulting LLC",
+  legalName: "Starbloom Consulting LLC",
   foundingDate: "2025",
-  description: "StarBloom Consulting deploys private AI infrastructure on client-owned hardware. We are a software-only firm — no hardware sales, no cloud lock-in, no data harvesting. Built by operators, for operators.",
+  description: "Starbloom Consulting LLC is an Edge-AI & Automation Orchestration Platform for blue-collar, home-service, and operational industries. We deploy pre-configured hardware appliances running automated n8n workflows via outbound encrypted Cloudflare Tunnels, 24/7 conversational AI intake engines, and legacy data bridge agents that liberate data from closed-source desktop ERPs into live cloud visualization — all running on client-owned hardware with zero data leakage.",
   foundingLocation: "Maryland, USA",
   areaServed: "United States",
   knowsAbout: [
-    "Private AI Deployment",
-    "On-Premise LLM Orchestration",
-    "Air-Gapped Computing",
-    "Open-Source AI Agents",
-    "Workflow Automation",
-    "Local Model Fine-Tuning"
+    "Edge-AI Infrastructure",
+    "N8N Workflow Orchestration",
+    "AI Voice & SMS Intake Systems",
+    "Vision-RPA Data Extraction",
+    "Google BigQuery & Looker Studio",
+    "On-Premise Model Deployment",
+    "Cloudflare Tunnel Networking"
   ]
 };
 
 const credentials = [
   {
-    category: "Operations Leadership",
+    category: "Operations Command",
     items: [
       "20+ years managing labor crews, construction sites, and production facilities",
       "Directed 50-person teams across 21-room rotational production environments",
@@ -53,20 +54,21 @@ const credentials = [
     ]
   },
   {
-    category: "Technical Infrastructure",
+    category: "Platform Engineering",
     items: [
-      "Architected and deployed private AI clusters on consumer and prosumer hardware",
-      "Configured air-gapped LLM environments with zero outbound API dependencies",
-      "Built multi-node Kubernetes-style orchestration for local model serving",
-      "Integrated Docker, n8n, Open WebUI, and Ollama into cohesive private stacks"
+      "Architected multi-node Edge-AI orchestration clusters on consumer and prosumer hardware",
+      "Deployed air-gapped LLM environments with zero outbound API dependencies",
+      "Engineered outbound-only Cloudflare Tunnel topologies that bypass enterprise firewall friction",
+      "Integrated Docker, n8n, Ollama, and Open WebUI into cohesive private stacks"
     ]
   },
   {
-    category: "Software & Automation",
+    category: "Automation & Data Liberation",
     items: [
-      "Developed autonomous AI agent frameworks for operational data processing",
-      "Built automated lead-generation pipelines processing thousands of signals daily",
-      "Created custom workflow automations replacing manual data entry across multiple verticals"
+      "Built vision-RPA agents that extract data from closed-source legacy desktop ERPs",
+      "Engineered real-time BigQuery streaming pipelines from on-premise systems",
+      "Developed autonomous AI agent frameworks handling thousands of operational signals daily",
+      "Created 24/7 conversational AI intake agents integrating Vapi, Retell, and Twilio"
     ]
   }
 ];
@@ -74,68 +76,88 @@ const credentials = [
 const values = [
   {
     title: "No Cloud, No Compromise",
-    body: "We do not route your data through third-party servers. Every model, every agent, every pipeline runs on hardware you control. If it can't run locally, we don't deploy it."
+    body: "We do not route your operational data through third-party servers. Every model, every agent, every pipeline runs on hardware you control. Outbound-only encrypted tunnels. Zero inbound firewall changes. If it can't run locally, we don't deploy it."
   },
   {
-    title: "Open-Source by Default",
-    body: "Everything we build is inspectable. No proprietary black boxes. You own the code, the configs, and the models. We provide documentation, not vendor lock-in."
+    title: "Open-Source Orchestration",
+    body: "Our stack is inspectable and extensible: Docker, n8n, Ollama, open-source LLMs, Cloudflare Tunnel. No proprietary black boxes. You own the configs, the workflows, and the models. We provide documentation, not vendor lock-in."
   },
   {
     title: "Operator-First Design",
-    body: "We do not build dashboards for data scientists. We build tools for foremen, crew leads, farm managers, and small business owners — people who need AI to work without needing a PhD to operate it."
+    body: "We don't build dashboards for data scientists. We build platforms for foremen, crew leads, farm managers, and small business owners — people who need AI-powered automation to work without requiring a PhD to operate it."
   },
   {
-    title: "Transparent Pricing",
-    body: "One flat engagement fee. No per-seat licensing, no usage-based billing, no surprise invoices. You know the cost before we touch a single config file."
+    title: "Transparent Fleet Pricing",
+    body: "Foundation Tier at $500 per deployment. Fleet Tier at $950 per deployment. Flat, upfront, transparent. No per-seat licensing, no usage-based billing, no surprise invoices. Currently restricted to the Private Beta Cohort."
   }
 ];
 ---
 
 <Layout
-  title="About StarBloom Consulting — Built by Operators, for Operators"
-  description="StarBloom Consulting deploys private AI infrastructure on your hardware. Founded by operators, not venture capitalists. Air-gapped clusters, local LLMs, open-source orchestration. No cloud dependency."
+  title="About Starbloom — The Edge-AI Orchestration Platform"
+  description="Starbloom Consulting LLC is an Edge-AI & Automation Orchestration Platform. Founded by operators. Deploying private AI infrastructure on client-owned hardware. Three pillars: Edge-AI Orchestration, 24/7 AI Intake Engine, Legacy Data Bridge."
   canonicalURL={`${Astro.site}/about`}
 >
 
   <!-- ==========================================
-       PAGE HEADER
+       PAGE HEADER — Platform Origin
        ========================================== -->
   <section class="relative overflow-hidden border-b border-slate-700/30" aria-labelledby="about-heading">
-    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-cyan-500/5 to-transparent pointer-events-none" aria-hidden="true"></div>
     <div class="container-site py-20 relative z-10 text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">About</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">About the Platform</p>
       <h1 id="about-heading" class="text-4xl md:text-5xl font-black tracking-tight text-white-pure">
         Built by <span class="text-gradient">Operators</span>,<br class="sm:hidden" /> for Operators.
       </h1>
       <p class="mt-6 text-text-muted text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-        We are not a VC-backed SaaS startup. We are not AI influencers. We are operators who learned to deploy private AI because the alternatives — cloud APIs, data harvesting, per-seat pricing — were unacceptable for real businesses running real operations.
+        We are not a VC-backed SaaS startup. We are an Edge-AI &amp; Automation Orchestration
+        Platform built by someone who has run real crews on real deadlines with real consequences.
+        Three infrastructure pillars. One platform. Your hardware. Zero leakage.
       </p>
     </div>
   </section>
 
   <!-- ==========================================
-       ORIGIN STORY
+       THE PROBLEM WE SOLVE
        ========================================== -->
   <section class="container-site py-20" aria-labelledby="story-heading">
     <div class="max-w-4xl mx-auto">
       <h2 id="story-heading" class="text-3xl font-black text-white-pure tracking-tight">
-        The Problem We Solve
+        The Platform Thesis
       </h2>
       <div class="mt-8 space-y-5 text-text-muted leading-relaxed">
         <p>
-          Most businesses generating operational data — schedules, inventory logs, compliance documents, maintenance records, crew reports — have no practical way to apply AI to it. The tools exist. The models exist. But the bridge between a dusty server rack in a back office and a working AI agent that actually saves time? That bridge doesn't build itself.
+          Every operating business generates a firehose of data: schedules, inventory, compliance
+          documents, maintenance records, crew logs, incoming calls, job bookings. Most of it lives
+          trapped inside closed-source legacy systems — desktop ERPs built in 2003, job management
+          tools with no API, voicemail boxes that fill up overnight.
         </p>
         <p>
-          The mainstream AI industry has one answer: ship your data to the cloud. Upload it to our API. Trust our infrastructure. Pay per token, per seat, per month — forever.
+          The mainstream AI industry has one answer: upload your data to our cloud. Ship it to our
+          API. Trust our infrastructure. Pay per token, per seat, per month — forever.
         </p>
         <p class="text-white-pure font-medium">
-          We rejected that answer.
+          We rejected that answer on three fronts.
         </p>
         <p>
-          StarBloom Consulting was founded on a simple principle: <strong class="text-white-pure">if you own the hardware, you should own the AI.</strong> The models are open-source. The orchestration tools are mature. The missing piece is someone who speaks both languages — the language of the shop floor and the language of the terminal — and can translate between them.
+          <strong class="text-cyan-400">Pillar One — Edge-AI Orchestration:</strong> Pre-configured
+          local appliances running automated n8n workflows 24/7 via outbound Cloudflare Tunnels.
+          Your hardware, your firewall, your rules. Zero inbound ports.
         </p>
         <p>
-          That's what we do. We take commodity hardware, open-source models, and battle-tested orchestration tooling, and we assemble it into a private AI system that lives entirely inside your four walls. No cloud. No subscriptions. No data leakage. Just working AI on your terms.
+          <strong class="text-blue-400">Pillar Two — 24/7 AI Intake Engine:</strong> Sub-100ms
+          conversational AI voice and SMS agents that answer, qualify, and book jobs while your crew
+          sleeps. Integrated directly into your CRM. No missed calls. No voicemail tag.
+        </p>
+        <p>
+          <strong class="text-purple-400">Pillar Three — Legacy Data Bridge:</strong> Vision-RPA
+          agents that scrape data out of closed-source desktop ERPs and stream it into Google
+          BigQuery for live Looker Studio dashboards. No manual CSV exports. Just continuous,
+          automated data liberation.
+        </p>
+        <p>
+          Starbloom Consulting LLC is the orchestration layer that connects all three.
+          Three pillars. One platform. Your infrastructure.
         </p>
       </div>
     </div>
@@ -148,11 +170,10 @@ const values = [
     <div class="container-site py-20">
       <div class="max-w-4xl mx-auto">
         <h2 id="founder-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
-          Meet the Architect
+          Meet the Platform Architect
         </h2>
 
         <div class="mt-12 flex flex-col md:flex-row gap-10 items-start">
-          <!-- Avatar placeholder -->
           <div class="flex-shrink-0 mx-auto md:mx-0">
             <div class="w-32 h-32 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-600">
@@ -165,7 +186,6 @@ const values = [
             </p>
           </div>
 
-          <!-- Bio -->
           <div class="flex-1">
             <h3 class="text-2xl font-bold text-white-pure">{founder.name}</h3>
             <p class="mt-1 text-sm text-accent font-semibold">{founder.jobTitle}</p>
@@ -177,7 +197,7 @@ const values = [
 
         <!-- Competency tags -->
         <div class="mt-10 max-w-4xl mx-auto">
-          <h4 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Core Competencies</h4>
+          <h4 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Platform Competencies</h4>
           <div class="flex flex-wrap gap-2">
             {founder.knowsAbout.map(skill => (
               <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-text-muted font-medium">
@@ -191,15 +211,15 @@ const values = [
   </section>
 
   <!-- ==========================================
-       CREDENTIALS — Three pillars
+       CREDENTIALS — Three columns
        ========================================== -->
   <section class="container-site py-20" aria-labelledby="credentials-heading">
     <div class="max-w-4xl mx-auto">
       <h2 id="credentials-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
-        Operational Credentials
+        Platform Credentials
       </h2>
       <p class="mt-4 text-center text-text-muted text-sm max-w-xl mx-auto">
-        We bring hands-on experience from the trades, not a conference badge.
+        Hands-on experience from the trades, not a conference badge.
       </p>
 
       <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -223,65 +243,133 @@ const values = [
   </section>
 
   <!-- ==========================================
-       VALUES — What we stand on
+       PLATFORM TIERS — $500 / $950
+       Preserved for crawlers with beta overlay
        ========================================== -->
-  <section class="bg-slate-900 border-y border-slate-700/30" aria-labelledby="values-heading">
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="about-tiers-heading">
     <div class="container-site py-20">
-      <div class="max-w-4xl mx-auto">
-        <h2 id="values-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
-          What We Stand On
+      <div class="max-w-5xl mx-auto">
+        <h2 id="about-tiers-heading" class="text-3xl font-black text-white-pure text-center tracking-tight">
+          Platform <span class="text-gradient">Tiers</span>
         </h2>
+        <p class="mt-4 text-center text-text-muted text-sm max-w-xl mx-auto">
+          Baseline deployment pricing. All tiers currently in Private Beta.
+        </p>
 
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {values.map(v => (
-            <div class="card-surface hover:glow-border transition-all duration-300">
-              <h3 class="text-lg font-bold text-white-pure">{v.title}</h3>
-              <p class="mt-2 text-sm text-text-muted leading-relaxed">{v.body}</p>
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- $500 -->
+          <div class="card-surface flex flex-col relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-blue-600/90 text-white-pure text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-lg z-10">
+              Restricted to Beta Cohort
             </div>
-          ))}
+            <h3 class="text-xl font-bold text-white-pure">Foundation Tier</h3>
+            <div class="mt-2">
+              <span class="text-4xl font-black text-white-pure">$500</span>
+              <span class="text-text-muted text-sm"> / deployment</span>
+            </div>
+            <p class="mt-3 text-sm text-text-muted leading-relaxed">
+              Edge-AI Orchestration + Legacy Data Bridge. One machine. 30 days support.
+            </p>
+          </div>
+
+          <!-- $950 -->
+          <div class="card-surface flex flex-col relative overflow-hidden glow-border ring-1 ring-blue-600/30 scale-[1.02]">
+            <div class="absolute top-0 right-0 bg-blue-600/90 text-white-pure text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-lg z-10">
+              Restricted to Beta Cohort
+            </div>
+            <span class="self-start px-3 py-1 mb-4 rounded-full bg-blue-600/20 text-accent text-xs font-bold uppercase tracking-wider">
+              Recommended
+            </span>
+            <h3 class="text-xl font-bold text-white-pure">Fleet Tier</h3>
+            <div class="mt-2">
+              <span class="text-4xl font-black text-white-pure">$950</span>
+              <span class="text-text-muted text-sm"> / deployment</span>
+            </div>
+            <p class="mt-3 text-sm text-text-muted leading-relaxed">
+              Full platform: Edge-AI Orchestration + 24/7 AI Intake Engine + Legacy Data Bridge.
+              Two machines. 30 days premium support.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================
-       CLOSING CTA
+       VALUES
        ========================================== -->
-  <section class="container-site py-20 text-center" aria-labelledby="about-cta-heading">
-    <h2 id="about-cta-heading" class="text-3xl font-black text-white-pure tracking-tight">
-      Let's talk about <span class="text-gradient">your hardware.</span>
-    </h2>
-    <p class="mt-4 text-text-muted max-w-lg mx-auto">
-      If you have machines and a problem to solve, we can have private AI running on them within a week. No sales deck. No demo environment. Just a conversation.
-    </p>
-    <div class="mt-8">
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-2xl shadow-blue-600/30 hover:bg-blue-600 transition-all duration-200 hover:shadow-blue-500/50"
-      >
-        Book a Discovery Call — $950 Flat
-      </a>
+  <section class="container-site py-20" aria-labelledby="values-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="values-heading" class="text-3xl font-black text-white-pure tracking-tight text-center">
+        What We Stand On
+      </h2>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {values.map(v => (
+          <div class="card-surface hover:glow-border transition-all duration-300">
+            <h3 class="text-lg font-bold text-white-pure">{v.title}</h3>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed">{v.body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- ==========================================
-       STRUCTURED DATA: AboutPage + ProfilePage
+       CLOSING CTA — Private Beta Gateway
+       ========================================== -->
+  <section class="bg-slate-900 border-t border-slate-700/30" aria-labelledby="about-cta-heading">
+    <div class="container-site py-20 text-center">
+      <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-600/15 border border-blue-600/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+        Private Beta — Limited Fleet Slots
+      </div>
+      <h2 id="about-cta-heading" class="text-3xl font-black text-white-pure tracking-tight">
+        Ready to join the <span class="text-gradient">Beta Fleet?</span>
+      </h2>
+      <p class="mt-4 text-text-muted max-w-lg mx-auto">
+        Edge-AI orchestration, 24/7 intake engines, and legacy data bridges —
+        all running on your hardware. Apply now.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-2xl shadow-blue-600/30 hover:bg-blue-600 transition-all duration-200 hover:shadow-blue-500/50"
+        >
+          Apply for Private Beta Access
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-10 py-5 rounded-xl border border-slate-600 text-text-muted font-semibold hover:text-white-pure hover:border-accent transition-all duration-200"
+        >
+          Join the Fleet Waitlist
+        </a>
+      </div>
+      <p class="mt-4 text-xs text-text-muted">
+        No checkout. No credit card. Application-only access during Beta.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STRUCTURED DATA: AboutPage + ProfilePage + Organization
+       Updated for Edge-AI Platform entity profile
        ========================================== -->
   <script type="application/ld+json" set:html={JSON.stringify([
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      "name": "About StarBloom Consulting",
+      "name": "About Starbloom Consulting LLC — Edge-AI Platform",
       "url": `${Astro.site}/about`,
       "description": organization.description,
       "about": {
         "@type": "Organization",
         "name": organization.name,
+        "legalName": organization.legalName,
         "foundingDate": organization.foundingDate,
         "foundingLocation": organization.foundingLocation,
         "areaServed": organization.areaServed,
         "description": organization.description,
-        "knowsAbout": organization.knowsAbout.map(t => t),
+        "knowsAbout": organization.knowsAbout,
         "url": Astro.site,
         "founder": {
           "@type": "Person",
@@ -291,17 +379,6 @@ const values = [
           "description": founder.description,
           "knowsAbout": founder.knowsAbout,
           "sameAs": founder.sameAs
-        }
-      },
-      "mainEntity": {
-        "@type": "Organization",
-        "name": organization.name,
-        "foundingDate": organization.foundingDate,
-        "founder": {
-          "@type": "Person",
-          "name": founder.name,
-          "jobTitle": founder.jobTitle,
-          "knowsAbout": founder.knowsAbout
         }
       }
     },
@@ -321,6 +398,7 @@ const values = [
         "worksFor": {
           "@type": "Organization",
           "name": organization.name,
+          "legalName": organization.legalName,
           "url": Astro.site
         }
       }

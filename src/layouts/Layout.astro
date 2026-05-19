@@ -1,5 +1,6 @@
 ---
-// StarBloom Consulting V2 — Core Layout Wrapper
+// Starbloom Consulting LLC V3.0 — Core Layout Wrapper
+// Edge-AI & Automation Orchestration Platform
 // Strict semantic HTML5. Every page inherits this structure.
 
 export interface Props {
@@ -23,17 +24,17 @@ const {
     <!-- ═══ Primary Meta ═══ -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | StarBloom Consulting</title>
+    <title>{title} | Starbloom Consulting LLC</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
 
     <!-- ═══ Open Graph (Answer Engine Signals) ═══ -->
-    <meta property="og:title" content={`${title} | StarBloom Consulting`} />
+    <meta property="og:title" content={`${title} | Starbloom Consulting LLC`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${Astro.site}${ogImage}`} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="StarBloom Consulting" />
+    <meta property="og:site_name" content="Starbloom Consulting LLC" />
 
     <!-- ═══ Canonical ═══ -->
     {
@@ -44,14 +45,15 @@ const {
       )
     }
 
-    <!-- ═══ Structured Data: Organization (JSON-LD) ═══ -->
+    <!-- ═══ Structured Data: Organization (JSON-LD) — Edge-AI Platform ═══ -->
     <script type="application/ld+json" set:html={`{
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "StarBloom Consulting",
+      "name": "Starbloom Consulting LLC",
       "url": "${Astro.site}",
-      "description": "${description}",
+      "description": "Edge-AI & Automation Orchestration Platform. Private AI infrastructure on client-owned hardware for blue-collar, home-service, and operational industries.",
       "foundingDate": "2025",
+      "legalName": "Starbloom Consulting LLC",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Sales",
@@ -83,7 +85,7 @@ const {
     <header class="border-b border-slate-700/50 bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
       <nav class="container-site flex items-center justify-between h-16" aria-label="Primary navigation">
         <!-- Logo / Wordmark -->
-        <a href="/" class="flex items-center gap-2 no-underline" aria-label="StarBloom Consulting Home">
+        <a href="/" class="flex items-center gap-2 no-underline" aria-label="Starbloom Consulting LLC Home">
           <span class="text-xl font-black tracking-tight text-white-pure">
             Star<span class="text-accent">Bloom</span>
           </span>
@@ -92,7 +94,7 @@ const {
         <!-- Nav Links (Desktop) -->
         <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-text-muted">
           <li>
-            <a href="/" class="hover:text-white-pure transition-colors duration-200">Home</a>
+            <a href="/" class="hover:text-white-pure transition-colors duration-200">Platform</a>
           </li>
           <li>
             <a href="/about" class="hover:text-white-pure transition-colors duration-200">About</a>
@@ -111,7 +113,7 @@ const {
               href="/contact"
               class="px-4 py-2 rounded-lg bg-accent text-white-pure font-semibold hover:bg-blue-600 transition-colors duration-200"
             >
-              Get Started
+              Apply for Private Beta
             </a>
           </li>
         </ul>
@@ -145,19 +147,19 @@ const {
             Star<span class="text-accent">Bloom</span>
           </span>
           <p class="mt-2 text-sm text-text-muted max-w-xs">
-            Private AI infrastructure for operators who build things that matter.
+            Edge-AI & Automation Orchestration Platform. Private infrastructure for operators who build things that matter.
           </p>
         </div>
 
         <!-- Column 2: Quick Links -->
         <nav aria-label="Footer navigation">
-          <h3 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Navigate</h3>
+          <h3 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Platform</h3>
           <ul class="space-y-2 text-sm text-text-muted">
-            <li><a href="/" class="hover:text-white-pure transition-colors">Home</a></li>
+            <li><a href="/" class="hover:text-white-pure transition-colors">Edge-AI Orchestration</a></li>
+            <li><a href="#intake-engine" class="hover:text-white-pure transition-colors">AI Intake Engine</a></li>
+            <li><a href="#data-bridge" class="hover:text-white-pure transition-colors">Legacy Data Bridge</a></li>
             <li><a href="/about" class="hover:text-white-pure transition-colors">About</a></li>
-            <li><a href="/case-studies" class="hover:text-white-pure transition-colors">Case Studies</a></li>
             <li><a href="/blog" class="hover:text-white-pure transition-colors">Blog</a></li>
-            <li><a href="/aeo-reports" class="hover:text-white-pure transition-colors">AEO Reports</a></li>
             <li><a href="/contact" class="hover:text-white-pure transition-colors">Contact</a></li>
           </ul>
         </nav>
@@ -183,7 +185,7 @@ const {
       <!-- Bottom Bar -->
       <div class="border-t border-slate-700/30">
         <div class="container-site flex flex-col sm:flex-row items-center justify-between py-4 text-xs text-text-muted">
-          <p>&copy; {new Date().getFullYear()} StarBloom Consulting. All rights reserved.</p>
+          <p>&copy; 2026 Starbloom Consulting LLC. All rights reserved.</p>
           <div class="flex gap-4 mt-2 sm:mt-0">
             <a href="/privacy" class="hover:text-white-pure transition-colors">Privacy Policy</a>
             <a href="/terms" class="hover:text-white-pure transition-colors">Terms of Service</a>

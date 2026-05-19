@@ -1,13 +1,15 @@
 ---
-// StarBloom Consulting V2 — AEO Reports Landing Page
-// Phase 4: Productized B2B Service — A.P.E.X. Site Diagnostic Reports
+// Starbloom Consulting LLC V3.0 — AEO Reports Landing Page
+// A.P.E.X. Site Diagnostic Reports — Productized B2B Service
+// Private Beta Gateway enforced. Pricing preserved for crawlers.
+// Schema: Service + AggregateOffer synced to platform entity.
 
 import Layout from '../layouts/Layout.astro';
 
 const service = {
   name: "A.P.E.X. Site Diagnostic Reports",
   tagline: "Automated technical AEO diagnostics for digital agencies.",
-  provider: "StarBloom Consulting",
+  provider: "Starbloom Consulting LLC",
   priceCurrency: "USD",
   lowPrice: "500.00",
   highPrice: "750.00",
@@ -31,7 +33,7 @@ const tiers = [
       "Priority-ranked fix list with code-level remediation snippets",
       "Deliverable: 15–25 page PDF report + JSON-LD markup payload"
     ],
-    cta: "Order Core Diagnostic — $500"
+    cta: "Apply for Private Beta Access"
   },
   {
     name: "A.P.E.X. Full Intelligence Report",
@@ -47,7 +49,7 @@ const tiers = [
       "Priority-ranked content briefs — 3–5 recommended new pages with target entities and keyword maps",
       "Deliverable: 30–50 page PDF report + deployable JSON-LD markup payload + content briefs"
     ],
-    cta: "Order Full Intelligence — $750",
+    cta: "Apply for Private Beta Access",
     featured: true
   }
 ];
@@ -70,7 +72,7 @@ const useCases = [
 const faqs = [
   {
     question: "What exactly does an A.P.E.X. report analyze?",
-    answer: "A.P.E.X. reports are technical AEO (Answer Engine Optimization) diagnostics. We crawl the target site and audit: structured data (Schema.org JSON-LD), entity coverage across Organization/Person/Product/FAQ schemas, semantic HTML5 structure, Core Web Vitals, mobile rendering, content heading hierarchy, broken links, redirect chains, and indexing errors. The output is a prioritized fix list with code-level remediation snippets."
+    answer: "A.P.E.X. reports are technical AEO (Answer Engine Optimization) diagnostics. We crawl the target site and audit: structured data (Schema.org JSON-LD), entity coverage across Organization/Person/Product/FAQ/LocalBusiness schemas, semantic HTML5 structure, Core Web Vitals, mobile rendering, content heading hierarchy, broken links, redirect chains, and indexing errors. The output is a prioritized fix list with code-level remediation snippets."
   },
   {
     question: "Who are these reports for?",
@@ -86,7 +88,7 @@ const faqs = [
   },
   {
     question: "Can I white-label these reports for my agency clients?",
-    answer: "Yes — A.P.E.X. reports are explicitly designed for agency white-label use. The PDF is cleanly formatted with no StarBloom branding in the body. You present the findings under your own brand, add your strategic recommendations, and bill your client at your own rate. We are the technical engine; you are the face of the deliverable."
+    answer: "Yes — A.P.E.X. reports are explicitly designed for agency white-label use. The PDF is cleanly formatted with no Starbloom branding in the body. You present the findings under your own brand, add your strategic recommendations, and bill your client at your own rate. We are the technical engine; you are the face of the deliverable."
   },
   {
     question: "How long does it take to receive a report?",
@@ -101,13 +103,14 @@ const faqs = [
 
 <Layout
   title="A.P.E.X. Site Diagnostic Reports — AEO Audits for Agencies"
-  description="Automated B2B technical AEO diagnostics for digital agencies. Schema audits, entity coverage maps, competitive benchmarking, and deployable JSON-LD markup payloads. Starting at $500."
+  description="Automated B2B technical AEO diagnostics for digital agencies. Schema audits, entity coverage maps, competitive benchmarking, and deployable JSON-LD markup payloads. Starting at $500. Private Beta."
   canonicalURL={`${Astro.site}/aeo-reports`}
 >
 
   <!-- ═══════════════════════════════════════════
-       HEAD SLOT: Service + Offer Schema Injection
-       ═══════════════════════════════════════════ -->
+       HEAD SLOT: Service + AggregateOffer Schema
+       Synced to Starbloom Consulting LLC entity
+       =══════════════════════════════════════════ -->
   <slot slot="head" name="head">
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
@@ -117,6 +120,7 @@ const faqs = [
       "provider": {
         "@type": "Organization",
         "name": service.provider,
+        "legalName": "Starbloom Consulting LLC",
         "url": Astro.site
       },
       "serviceType": "AEO Diagnostic Reports",
@@ -130,13 +134,15 @@ const faqs = [
         "lowPrice": service.lowPrice,
         "highPrice": service.highPrice,
         "offerCount": String(service.offerCount),
-        "description": "Two tiers: A.P.E.X. Core Diagnostic ($500) covers crawl, schema audit, entity coverage, mobile rendering, and content structure analysis. A.P.E.X. Full Intelligence Report ($750) adds competitive entity benchmarking, semantic content gap analysis, and deployable JSON-LD markup generation with content briefs.",
+        "description": "Two tiers: A.P.E.X. Core Diagnostic ($500) covers crawl, schema audit, entity coverage, mobile rendering, and content structure analysis. A.P.E.X. Full Intelligence Report ($750) adds competitive entity benchmarking, semantic content gap analysis, and deployable JSON-LD markup generation with content briefs. Currently available via Private Beta application.",
+        "availability": "https://schema.org/PreOrder",
         "offers": tiers.map(tier => ({
           "@type": "Offer",
           "name": tier.name,
           "price": tier.priceRaw,
           "priceCurrency": "USD",
-          "description": tier.description
+          "description": tier.description,
+          "availability": "https://schema.org/PreOrder"
         }))
       }
     })}>
@@ -144,12 +150,17 @@ const faqs = [
   </slot>
 
   <!-- ==========================================
-       HERO — Productized service clarity
+       HERO — Productized service + Beta notice
        ========================================== -->
   <section class="relative overflow-hidden" aria-labelledby="service-heading">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
     <div class="container-site py-24 md:py-28 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
+
+        <!-- Beta badge -->
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-600/15 border border-blue-600/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+          Private Beta — Application-Only Access
+        </div>
 
         <!-- Eyebrow -->
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">
@@ -167,6 +178,7 @@ const faqs = [
           Automated technical AEO diagnostics built for digital agencies.
           Crawl analysis, schema audits, entity coverage maps, and deployable JSON-LD markup payloads —
           white-label-ready. Starting at <strong class="text-white-pure font-semibold">$500</strong> per report.
+          Currently restricted to the Private Beta Cohort.
         </p>
 
         <!-- Trust signals -->
@@ -190,6 +202,9 @@ const faqs = [
 
   <!-- ==========================================
        TIER COMPARISON — Core vs Full Intelligence
+       Pricing preserved for crawlers
+       CTA buttons → "Apply for Private Beta Access"
+       "Restricted to Beta Cohort" badges overlaid
        ========================================== -->
   <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="tiers-heading">
     <div class="container-site py-20">
@@ -199,11 +214,16 @@ const faqs = [
         </h2>
         <p class="mt-4 text-center text-text-muted text-sm max-w-xl mx-auto">
           Every report is a technical diagnostic, not a sales deck. Choose the depth your client needs.
+          All tiers restricted to Beta Cohort during launch phase.
         </p>
 
         <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
           {tiers.map(tier => (
-            <div class={`card-surface flex flex-col ${tier.featured ? 'glow-border ring-1 ring-blue-600/30 scale-[1.02]' : ''}`}>
+            <div class={`card-surface flex flex-col relative overflow-hidden ${tier.featured ? 'glow-border ring-1 ring-blue-600/30 scale-[1.02]' : ''}`}>
+              <!-- Restricted to Beta Cohort overlay badge -->
+              <div class="absolute top-0 right-0 bg-blue-600/90 text-white-pure text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-bl-lg z-10">
+                Restricted to Beta Cohort
+              </div>
               {tier.featured && (
                 <span class="self-start px-3 py-1 mb-4 rounded-full bg-blue-600/20 text-accent text-xs font-bold uppercase tracking-wider">
                   Recommended
@@ -297,7 +317,7 @@ const faqs = [
         </div>
       </div>
 
-      <!-- FAQPage JSON-LD for this page's FAQ -->
+      <!-- FAQPage JSON-LD -->
       <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -315,30 +335,36 @@ const faqs = [
   </section>
 
   <!-- ==========================================
-       FINAL CTA
+       FINAL CTA — Private Beta Gateway
        ========================================== -->
   <section class="container-site py-20 text-center" aria-labelledby="apex-cta-heading">
+    <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-600/15 border border-blue-600/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+      Private Beta — Limited Fleet Slots
+    </div>
     <h2 id="apex-cta-heading" class="text-3xl md:text-4xl font-black text-white-pure tracking-tight">
       Ready to put <span class="text-gradient">data behind your pitch?</span>
     </h2>
     <p class="mt-4 text-text-muted max-w-lg mx-auto">
-      Order an A.P.E.X. report for your next prospect or retainer client.
-      White-label delivery in 72 hours. Starting at $500.
+      Apply for A.P.E.X. report access. White-label delivery in 72 hours. Starting at $500.
+      Currently restricted to Beta Cohort applicants.
     </p>
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
       <a
         href="/contact"
         class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-2xl shadow-blue-600/30 hover:bg-blue-600 transition-all duration-200 hover:shadow-blue-500/50"
       >
-        Order a Report
+        Apply for Private Beta Access
       </a>
       <a
         href="mailto:fletcher@starbloomconsulting.com"
-        class="inline-flex items-center justify-center px-10 py-5 rounded-xl border border-slate-600 text-text-muted font-semibold hover:text-white-pure hover:border-slate-400 transition-all duration-200"
+        class="inline-flex items-center justify-center px-10 py-5 rounded-xl border border-slate-600 text-text-muted font-semibold hover:text-white-pure hover:border-accent transition-all duration-200"
       >
-        Inquire About Volume Pricing
+        Join the Fleet Waitlist
       </a>
     </div>
+    <p class="mt-4 text-xs text-text-muted">
+      No checkout. No credit card. Application-only access during Beta.
+    </p>
   </section>
 
 </Layout>
