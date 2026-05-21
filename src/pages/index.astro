@@ -515,6 +515,37 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ==========================================
+       DIRECT-ANSWER FAQ — Purchase-Intent Queries
+       High-intent deployment Q&A for answer engine capture
+       ========================================== -->
+  <section class="container-site py-20" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="faq-heading" class="text-3xl md:text-4xl font-black text-white-pure text-center tracking-tight">
+        Common <span class="text-gradient">Questions</span>
+      </h2>
+
+      <dl class="mt-12 space-y-6">
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            What hardware is required for Starbloom?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Starbloom&rsquo;s Edge-AI platform runs on dedicated, localized mini-PC appliances (such as Beelink or ASUS edge computers) deployed directly inside your office. We can also provision the orchestration stack on your existing private cloud infrastructure.
+          </dd>
+        </div>
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            How long does platform deployment take?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Fleet deployment is typically completed in under 7 days. This includes a 60-minute architecture blueprint session, remote orchestration provisioning via outbound Cloudflare Tunnels, and a final operational handoff.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ==========================================
        FINAL CTA — Fleet Deployment Gateway
        ========================================== -->
   <section class="container-site py-20 text-center" aria-labelledby="final-cta-heading">
@@ -583,6 +614,30 @@ import Layout from '../layouts/Layout.astro';
         { "@type": "Thing", "name": "Looker Studio Visualization", "sameAs": "http://www.wikidata.org/entity/Q6674750" },
         { "@type": "Thing", "name": "On-Premise LLM Deployment", "sameAs": "http://www.wikidata.org/entity/Q7095738" },
         { "@type": "Thing", "name": "CRM Integration Automation", "sameAs": "http://www.wikidata.org/entity/Q16680268" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "name": "Starbloom Edge AI Platform — Deployment FAQ",
+      "url": Astro.site,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What hardware is required for Starbloom?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starbloom's Edge-AI platform runs on dedicated, localized mini-PC appliances (such as Beelink or ASUS edge computers) deployed directly inside your office. We can also provision the orchestration stack on your existing private cloud infrastructure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does platform deployment take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fleet deployment is typically completed in under 7 days. This includes a 60-minute architecture blueprint session, remote orchestration provisioning via outbound Cloudflare Tunnels, and a final operational handoff."
+          }
+        }
       ]
     },
     {
