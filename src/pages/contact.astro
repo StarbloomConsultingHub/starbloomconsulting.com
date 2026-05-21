@@ -239,6 +239,79 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- ==========================================
+       STRUCTURED DATA: ContactPage + WebApplication
+       Fleet Deployment Intake Gateway
+       ========================================== -->
+  <script type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Request a Fleet Deployment Slot — Starbloom Consulting LLC",
+      "url": `${Astro.site}/contact`,
+      "description": "Request a deployment slot for the Starbloom Edge AI & Automation Orchestration Platform. Application-only fleet access for the Q2/Q3 deployment cohort.",
+      "about": {
+        "@type": "Organization",
+        "name": "Starbloom Consulting LLC",
+        "url": Astro.site
+      },
+      "mainEntity": {
+        "@type": "WebApplication",
+        "name": "Fleet Deployment Application",
+        "url": `${Astro.site}/contact`,
+        "description": "Application form requesting a fleet deployment slot for the Starbloom Edge AI & Automation Orchestration Platform. All fields required. Review within 2 business days.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Any modern browser",
+        "offers": {
+          "@type": "Offer",
+          "name": "Fleet Deployment Application",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Starbloom Consulting LLC",
+          "url": Astro.site
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "name": "Fleet Deployment Process",
+      "url": `${Astro.site}/contact`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What happens after I submit a Fleet Deployment Application?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your application lands in our intake pipeline. We evaluate your legacy stack and automation goals against current fleet capacity and respond within 2 business days. If your operation is a fit, we schedule a 60-minute architecture session to map your three-pillar deployment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the Starbloom Edge AI platform cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Foundation Tier: $500 per deployment (Edge AI Orchestration + Legacy Data Bridge on one machine). Fleet Tier: $950 per deployment (full platform — Edge AI Orchestration + 24/7 AI Intake Engine + Legacy Data Bridge on up to two machines). All tiers are flat, upfront pricing with no per-seat licensing or usage-based billing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my data stay on my own hardware?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every model, every agent, every pipeline runs on hardware you control. We use outbound-only encrypted Cloudflare Tunnels that require zero inbound firewall changes. Your data never leaves your infrastructure."
+          }
+        }
+      ]
+    }
+  ])}>
+  </script>
+
 </Layout>
 
 <!-- ==========================================

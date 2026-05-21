@@ -405,18 +405,29 @@ import Layout from '../layouts/Layout.astro';
       "name": "Starbloom Consulting LLC",
       "legalName": "Starbloom Consulting LLC",
       "url": Astro.site,
+      "logo": `${Astro.site}/og-default.png`,
       "description": "Edge AI & Automation Orchestration Platform. Private AI infrastructure on client-owned hardware. Pre-configured n8n appliances, 24/7 AI voice & SMS intake engines, and legacy data bridge agents for blue-collar, home-service, and operational industries.",
       "foundingDate": "2025",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "sameAs": [
+        Astro.site,
+        "https://github.com/StarbloomConsultingHub",
+        "https://www.linkedin.com/company/starbloom-consulting-llc"
+      ],
       "knowsAbout": [
-        "Edge AI Orchestration",
-        "n8n Workflow Automation",
-        "Cloudflare Tunnel Infrastructure",
-        "Conversational AI Voice Agents",
-        "Vision-RPA Data Extraction",
-        "Google BigQuery Data Pipelines",
-        "Looker Studio Visualization",
-        "On-Premise LLM Deployment",
-        "CRM Integration Automation"
+        { "@type": "Thing", "name": "Edge AI Orchestration", "sameAs": "http://www.wikidata.org/entity/Q264480" },
+        { "@type": "Thing", "name": "n8n Workflow Automation", "sameAs": "http://www.wikidata.org/entity/Q106651894" },
+        { "@type": "Thing", "name": "Cloudflare Tunnel", "sameAs": "http://www.wikidata.org/entity/Q107116940" },
+        { "@type": "Thing", "name": "Docker Container Orchestration", "sameAs": "http://www.wikidata.org/entity/Q141206" },
+        { "@type": "Thing", "name": "Conversational AI Voice Agents", "sameAs": "http://www.wikidata.org/entity/Q116662155" },
+        { "@type": "Thing", "name": "Vision-RPA Data Extraction", "sameAs": "http://www.wikidata.org/entity/Q54803784" },
+        { "@type": "Thing", "name": "Google BigQuery Data Pipelines", "sameAs": "http://www.wikidata.org/entity/Q5583808" },
+        { "@type": "Thing", "name": "Looker Studio Visualization", "sameAs": "http://www.wikidata.org/entity/Q6674750" },
+        { "@type": "Thing", "name": "On-Premise LLM Deployment", "sameAs": "http://www.wikidata.org/entity/Q7095738" },
+        { "@type": "Thing", "name": "CRM Integration Automation", "sameAs": "http://www.wikidata.org/entity/Q16680268" }
       ]
     },
     {

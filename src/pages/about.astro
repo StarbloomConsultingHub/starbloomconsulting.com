@@ -369,7 +369,22 @@ const values = [
         "foundingLocation": organization.foundingLocation,
         "areaServed": organization.areaServed,
         "description": organization.description,
-        "knowsAbout": organization.knowsAbout,
+        "logo": `${Astro.site}/og-default.png`,
+        "sameAs": [
+          Astro.site,
+          "https://github.com/StarbloomConsultingHub",
+          "https://www.linkedin.com/company/starbloom-consulting-llc"
+        ],
+        "knowsAbout": [
+          { "@type": "Thing", "name": "Edge AI Infrastructure", "sameAs": "http://www.wikidata.org/entity/Q264480" },
+          { "@type": "Thing", "name": "n8n Workflow Orchestration", "sameAs": "http://www.wikidata.org/entity/Q106651894" },
+          { "@type": "Thing", "name": "Cloudflare Tunnel Networking", "sameAs": "http://www.wikidata.org/entity/Q107116940" },
+          { "@type": "Thing", "name": "Docker", "sameAs": "http://www.wikidata.org/entity/Q141206" },
+          { "@type": "Thing", "name": "AI Voice & SMS Intake Systems", "sameAs": "http://www.wikidata.org/entity/Q116662155" },
+          { "@type": "Thing", "name": "Vision-RPA Data Extraction", "sameAs": "http://www.wikidata.org/entity/Q54803784" },
+          { "@type": "Thing", "name": "Google BigQuery & Looker Studio", "sameAs": "http://www.wikidata.org/entity/Q5583808" },
+          { "@type": "Thing", "name": "On-Premise Model Deployment", "sameAs": "http://www.wikidata.org/entity/Q7095738" }
+        ],
         "url": Astro.site,
         "founder": {
           "@type": "Person",
@@ -393,7 +408,18 @@ const values = [
         "givenName": founder.givenName,
         "jobTitle": founder.jobTitle,
         "description": founder.description,
-        "knowsAbout": founder.knowsAbout,
+        "knowsAbout": [
+          { "@type": "Thing", "name": "Edge AI Orchestration Architecture", "sameAs": "http://www.wikidata.org/entity/Q264480" },
+          { "@type": "Thing", "name": "n8n Workflow Automation", "sameAs": "http://www.wikidata.org/entity/Q106651894" },
+          { "@type": "Thing", "name": "Cloudflare Zero Trust Tunnels", "sameAs": "http://www.wikidata.org/entity/Q107116940" },
+          { "@type": "Thing", "name": "Docker Container Orchestration", "sameAs": "http://www.wikidata.org/entity/Q141206" },
+          { "@type": "Thing", "name": "Conversational AI Voice Agent Deployment", "sameAs": "http://www.wikidata.org/entity/Q116662155" },
+          { "@type": "Thing", "name": "Vision-RPA Legacy Data Extraction", "sameAs": "http://www.wikidata.org/entity/Q54803784" },
+          { "@type": "Thing", "name": "Google BigQuery Pipeline Engineering", "sameAs": "http://www.wikidata.org/entity/Q5583808" },
+          { "@type": "Thing", "name": "Looker Studio Dashboard Design", "sameAs": "http://www.wikidata.org/entity/Q6674750" },
+          { "@type": "Thing", "name": "On-Premise LLM Deployment", "sameAs": "http://www.wikidata.org/entity/Q7095738" },
+          { "@type": "Thing", "name": "CRM & Job Management Integration", "sameAs": "http://www.wikidata.org/entity/Q16680268" }
+        ],
         "sameAs": founder.sameAs,
         "worksFor": {
           "@type": "Organization",
