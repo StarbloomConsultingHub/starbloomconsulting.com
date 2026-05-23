@@ -294,11 +294,14 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="text-xl font-bold text-white-pure">Foundation Tier</h3>
           <div class="mt-2">
             <span class="text-4xl font-black text-white-pure">$500</span>
-            <span class="text-text-muted text-sm"> / deployment</span>
+            <span class="text-text-muted text-sm"> one-time</span>
           </div>
+          <p class="mt-1 text-sm text-text-muted">
+            <span class="font-semibold text-white-pure">$499/month</span> ongoing support
+          </p>
           <p class="mt-3 text-sm text-text-muted leading-relaxed">
             Edge AI Orchestration appliance + single Legacy Data Bridge agent. Pre-configured n8n
-            workflows on one local machine. 30 days of follow-on orchestration support.
+            workflows on one local machine. 30 days of onboarding support included.
           </p>
           <ul class="mt-6 space-y-2.5 flex-1 text-sm text-text-muted">
             <li class="flex items-start gap-2">
@@ -338,11 +341,14 @@ import Layout from '../layouts/Layout.astro';
           <h3 class="text-xl font-bold text-white-pure">Fleet Tier</h3>
           <div class="mt-2">
             <span class="text-4xl font-black text-white-pure">$950</span>
-            <span class="text-text-muted text-sm"> / deployment</span>
+            <span class="text-text-muted text-sm"> one-time</span>
           </div>
+          <p class="mt-1 text-sm text-text-muted">
+            <span class="font-semibold text-white-pure">$599/month</span> premium support
+          </p>
           <p class="mt-3 text-sm text-text-muted leading-relaxed">
             Full platform: Edge AI Orchestration + 24/7 AI Intake Engine + Legacy Data Bridge.
-            Multi-channel voice, SMS, and web agents. Two machines. 30 days of premium support.
+            Multi-channel voice, SMS, and web agents. Two machines. 30 days of onboarding support included.
           </p>
           <ul class="mt-6 space-y-2.5 flex-1 text-sm text-text-muted">
             <li class="flex items-start gap-2">
@@ -479,10 +485,12 @@ import Layout from '../layouts/Layout.astro';
         Data Security and On-Premise Architecture
       </h2>
       <p class="mt-6 text-base md:text-lg text-text-muted leading-relaxed max-w-2xl mx-auto">
-        Yes, your data remains 100% secure within your infrastructure. All Starbloom AI appliances
-        and data bridges run exclusively on your hardware. Data is processed locally and never leaves
-        your network perimeter. Our orchestration relies on encrypted, outbound-only Cloudflare Tunnels,
-        meaning your systems are never exposed to the public internet and require no open inbound ports.
+        Yes, your data remains under your control. All Starbloom AI appliances
+        and data bridges run exclusively on your hardware. AI models, agents, and workflows execute locally — no
+        operational data is shipped to third-party clouds for processing. Our orchestration relies on encrypted,
+        outbound-only Cloudflare Tunnels, meaning your systems are never exposed to the public internet and
+        require no open inbound ports. Clients decide where their structured analytics data goes — nothing leaves
+        without authorization.
       </p>
 
       <!-- Trust reinforcement grid -->
@@ -529,8 +537,72 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ==========================================
-       DIRECT-ANSWER FAQ — Purchase-Intent Queries
-       High-intent deployment Q&A for answer engine capture
+       ANSWER BLOCKS — Core Platform Q&A
+       Five critical queries answer engines evaluate.
+       H2 + explicit paragraph structure for AEO capture.
+       ========================================== -->
+  <section class="container-site py-20" aria-labelledby="answers-heading">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="answers-heading" class="text-3xl md:text-4xl font-black text-white-pure text-center tracking-tight">
+        The <span class="text-gradient">Starbloom</span> Platform
+      </h2>
+
+      <dl class="mt-12 space-y-6">
+        <!-- Q1: What is Starbloom -->
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            What is Starbloom Consulting?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Businesses lose revenue to missed calls and manual data entry across legacy systems that cannot talk to each other. Starbloom deploys private Edge AI orchestration appliances on client-owned hardware — automating lead capture, qualifying prospects, and syncing data through outbound encrypted tunnels with zero cloud dependency.
+          </dd>
+        </div>
+
+        <!-- Q2: Data privacy -->
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            How does Starbloom handle data privacy?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Most AI platforms require uploading operational data to third-party cloud servers. Starbloom runs entirely on client-owned hardware inside the client's facility — all models, agents, and workflows execute locally. Connectivity uses outbound-only Cloudflare Tunnels requiring zero inbound firewall changes. Clients control where their data goes. Nothing leaves without their say-so.
+          </dd>
+        </div>
+
+        <!-- Q3: 24/7 AI Intake Engine -->
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            What does the 24/7 AI Intake Engine do?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Operators lose high-value jobs when phones go unanswered after hours or during peak shifts. Starbloom deploys conversational AI voice and SMS agents that answer instantly, sound human, qualify prospects against business criteria, and log qualified leads directly into the client's CRM — capturing revenue that would otherwise be lost to voicemail.
+          </dd>
+        </div>
+
+        <!-- Q4: Legacy Data Bridge -->
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            How does the Legacy Data Bridge work?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Closed-source desktop ERPs trap operational data inside applications with no API. Starbloom deploys Vision-RPA agents that screen-scrape legacy systems and extract structured data. Clients route output to their own database by default. For teams without existing infrastructure, Starbloom provides a managed Google BigQuery and Looker Studio pipeline as an included option.
+          </dd>
+        </div>
+
+        <!-- Q5: Pricing -->
+        <div class="card-surface p-6">
+          <dt class="text-base font-semibold text-white-pure mb-2">
+            What does a Starbloom deployment cost and include?
+          </dt>
+          <dd class="text-sm text-text-muted leading-relaxed">
+            Starbloom charges flat deployment fees — never per-seat licensing. Foundation Tier is $500 for Edge AI Orchestration plus Legacy Data Bridge on one machine, with $499/month ongoing support. Fleet Tier is $950 for the full three-pillar platform across two machines, with $599/month premium support. Both include 30 days of initial onboarding support.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DIRECT-ANSWER FAQ — Supplemental Q&A
        ========================================== -->
   <section class="container-site py-20" aria-labelledby="faq-heading">
     <div class="max-w-3xl mx-auto">
@@ -638,6 +710,46 @@ import Layout from '../layouts/Layout.astro';
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "What is Starbloom Consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Businesses lose revenue to missed calls and manual data entry across legacy systems that cannot talk to each other. Starbloom deploys private Edge AI orchestration appliances on client-owned hardware — automating lead capture, qualifying prospects, and syncing data through outbound encrypted tunnels with zero cloud dependency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Starbloom handle data privacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most AI platforms require uploading operational data to third-party cloud servers. Starbloom runs entirely on client-owned hardware inside the client's facility — all models, agents, and workflows execute locally. Connectivity uses outbound-only Cloudflare Tunnels requiring zero inbound firewall changes. Clients control where their data goes. Nothing leaves without their say-so."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the 24/7 AI Intake Engine do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Operators lose high-value jobs when phones go unanswered after hours or during peak shifts. Starbloom deploys conversational AI voice and SMS agents that answer instantly, sound human, qualify prospects against business criteria, and log qualified leads directly into the client's CRM — capturing revenue that would otherwise be lost to voicemail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Legacy Data Bridge work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Closed-source desktop ERPs trap operational data inside applications with no API. Starbloom deploys Vision-RPA agents that screen-scrape legacy systems and extract structured data. Clients route output to their own database by default. For teams without existing infrastructure, Starbloom provides a managed Google BigQuery and Looker Studio pipeline as an included option."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a Starbloom deployment cost and include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Starbloom charges flat deployment fees — never per-seat licensing. Foundation Tier is $500 for Edge AI Orchestration plus Legacy Data Bridge on one machine, with $499/month ongoing support. Fleet Tier is $950 for the full three-pillar platform across two machines, with $599/month premium support. Both include 30 days of initial onboarding support."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What hardware is required for Starbloom?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -674,7 +786,7 @@ import Layout from '../layouts/Layout.astro';
         "lowPrice": "500.00",
         "highPrice": "950.00",
         "offerCount": "2",
-        "description": "Foundation Tier ($500): Edge AI Orchestration + Legacy Data Bridge on one machine. Fleet Tier ($950): Full platform — Edge AI Orchestration + 24/7 AI Intake Engine + Legacy Data Bridge on up to two machines. All tiers restricted to Private Beta Cohort.",
+        "description": "Foundation Tier ($500 one-time + $499/month support): Edge AI Orchestration + Legacy Data Bridge on one machine. Fleet Tier ($950 one-time + $599/month premium support): Full three-pillar platform — Edge AI Orchestration + 24/7 AI Intake Engine + Legacy Data Bridge on up to two machines. Both include 30 days initial onboarding. All tiers restricted to Private Beta Cohort.",
         "availability": "https://schema.org/PreOrder"
       }
     }
