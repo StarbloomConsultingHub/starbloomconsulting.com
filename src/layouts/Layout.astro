@@ -71,8 +71,24 @@ const {
       "sameAs": [
         "${Astro.site}",
         "https://github.com/StarbloomConsultingHub",
-        "https://www.linkedin.com/company/starbloom-consulting-llc"
+        "https://www.linkedin.com/company/starbloom-consulting-llc",
+        "https://www.linkedin.com/in/starbloomconsulting"
       ],
+      "founder": {
+        "@type": "Person",
+        "name": "Darren Kelly",
+        "givenName": "Darren",
+        "familyName": "Kelly",
+        "jobTitle": "Founder & Lead Platform Architect",
+        "url": "${Astro.site}/about",
+        "sameAs": [
+          "https://www.linkedin.com/in/starbloomconsulting"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Starbloom Consulting LLC"
+        }
+      },
       "knowsAbout": [
         { "@type": "Thing", "name": "n8n", "sameAs": "http://www.wikidata.org/entity/Q106651894" },
         { "@type": "Thing", "name": "Cloudflare Tunnel", "sameAs": "http://www.wikidata.org/entity/Q107116940" },
@@ -85,12 +101,22 @@ const {
         { "@type": "Thing", "name": "On-Premise Software Deployment", "sameAs": "http://www.wikidata.org/entity/Q7095738" },
         { "@type": "Thing", "name": "Workflow Automation", "sameAs": "http://www.wikidata.org/entity/Q16680268" }
       ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Sales",
-        "url": "${Astro.site}/contact",
-        "email": "fletcher@starbloomconsulting.com"
-      }
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "name": "Darren — Founder & Lead Platform Architect",
+          "url": "${Astro.site}/contact",
+          "email": "darren@starbloomconsulting.com"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "Technical Support",
+          "name": "Fletcher — Platform Operations",
+          "url": "${Astro.site}/contact",
+          "email": "fletcher@starbloomconsulting.com"
+        }
+      ]
     }`}>
     </script>
 
@@ -104,6 +130,10 @@ const {
 
     <!-- ═══ Per-Page Head Injection (Schemas, Meta, etc.) ═══ -->
     <slot name="head" />
+
+    <!-- ═══ LinkedIn Profile Badge Loader — Verified Identity Signal ═══ -->
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript">
+    </script>
 
     <meta name="generator" content={Astro.generator} />
   </head>
@@ -184,9 +214,9 @@ Request Fleet Deployment Slot
         <nav aria-label="Footer navigation">
           <h3 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Platform</h3>
           <ul class="space-y-2 text-sm text-text-muted">
-            <li><a href="/" class="hover:text-white-pure transition-colors">Edge AI Orchestration</a></li>
-            <li><a href="#intake-engine" class="hover:text-white-pure transition-colors">AI Intake Engine</a></li>
-            <li><a href="#data-bridge" class="hover:text-white-pure transition-colors">Legacy Data Bridge</a></li>
+            <li><a href="/#pillars-heading" class="hover:text-white-pure transition-colors">Edge AI Orchestration</a></li>
+            <li><a href="/#pillars-heading" class="hover:text-white-pure transition-colors">AI Intake Engine</a></li>
+            <li><a href="/#pillars-heading" class="hover:text-white-pure transition-colors">Legacy Data Bridge</a></li>
             <li><a href="/about" class="hover:text-white-pure transition-colors">About</a></li>
             <li><a href="/blog" class="hover:text-white-pure transition-colors">Blog</a></li>
             <li><a href="/contact" class="hover:text-white-pure transition-colors">Contact</a></li>
@@ -198,6 +228,13 @@ Request Fleet Deployment Slot
           <h3 class="text-sm font-semibold text-white-pure uppercase tracking-wider mb-3">Contact</h3>
           <ul class="space-y-2 text-sm text-text-muted">
             <li>
+              <span class="text-slate-500 text-xs">Platform Architect</span><br />
+              <a href="mailto:darren@starbloomconsulting.com" class="hover:text-white-pure transition-colors">
+                darren@starbloomconsulting.com
+              </a>
+            </li>
+            <li>
+              <span class="text-slate-500 text-xs">Platform Operations</span><br />
               <a href="mailto:fletcher@starbloomconsulting.com" class="hover:text-white-pure transition-colors">
                 fletcher@starbloomconsulting.com
               </a>
@@ -214,7 +251,7 @@ Request Fleet Deployment Slot
       <!-- Bottom Bar -->
       <div class="border-t border-slate-700/30">
         <div class="container-site flex flex-col sm:flex-row items-center justify-between py-4 text-xs text-text-muted">
-          <p>&copy; 2026 Starbloom Consulting LLC. All rights reserved.</p>
+          <p>&copy; 2025&ndash;2026 Starbloom Consulting LLC. All rights reserved.</p>
           <div class="flex gap-4 mt-2 sm:mt-0">
             <a href="/privacy" class="hover:text-white-pure transition-colors">Privacy Policy</a>
             <a href="/terms" class="hover:text-white-pure transition-colors">Terms of Service</a>

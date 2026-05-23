@@ -1,0 +1,98 @@
+---
+// Starbloom Consulting LLC — Privacy Policy
+// Edge AI & Automation Orchestration Platform
+// No data collection, no tracking, local processing only.
+
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy"
+  description="Starbloom Consulting LLC Privacy Policy. We do not collect, store, or process personal data. Our platform runs locally on client-owned hardware with zero cloud dependency."
+  canonicalURL={`${Astro.site}/privacy`}
+>
+
+  <section class="container-site py-20" aria-labelledby="privacy-heading">
+    <div class="max-w-3xl mx-auto prose prose-invert prose-slate">
+      <h1 id="privacy-heading" class="text-4xl font-black text-white-pure tracking-tight">
+        Privacy Policy
+      </h1>
+      <p class="text-text-muted text-sm mt-2">Effective Date: January 1, 2025</p>
+
+      <h2>1. Our Privacy Commitment</h2>
+      <p>
+        Starbloom Consulting LLC ("Starbloom," "we," "us," or "our") operates an Edge AI &amp;
+        Automation Orchestration Platform. We are committed to data sovereignty and operational
+        privacy. This policy explains how we handle information across our website and platform.
+      </p>
+
+      <h2>2. Information We Do Not Collect</h2>
+      <p>
+        Our public website (<code>starbloomconsulting.com</code>) does not collect, store, or
+        process personal data. Specifically:
+      </p>
+      <ul>
+        <li><strong>No cookies.</strong> We do not set tracking cookies, analytics cookies, or
+        session cookies on visitor browsers.</li>
+        <li><strong>No analytics.</strong> We do not use Google Analytics, Facebook Pixel, or any
+        third-party tracking service.</li>
+        <li><strong>No server logs.</strong> Our hosting platform may generate standard access logs
+        for operational purposes, but we do not store, parse, or mine them.</li>
+        <li><strong>No forms.</strong> Our contact page provides a beta application form. Submissions
+        are routed directly to our internal systems and are not stored on public infrastructure.</li>
+      </ul>
+
+      <h2>3. Platform Deployments — Client Hardware</h2>
+      <p>
+        The Starbloom Edge AI Platform is deployed on client-owned hardware. All automation
+        workflows, AI models, and data pipelines execute locally on the client's physical machines.
+        Starbloom does not receive, access, or proxy client operational data through our
+        infrastructure. Data never leaves the client's premises unless the client explicitly
+        configures an outbound integration (e.g., Google BigQuery, Twilio) under their own
+        credentials.
+      </p>
+
+      <h2>4. Contact Form Submissions</h2>
+      <p>
+        When you submit the beta application form on our contact page, the information you provide
+        (name, email, business description, and any attached message) is transmitted via an
+        encrypted outbound webhook to our internal workflow automation system. This data is used
+        solely to evaluate your fit for the Private Beta Cohort and to contact you regarding
+        deployment availability. We do not sell, share, or distribute contact form data to any
+        third party.
+      </p>
+
+      <h2>5. Third-Party Services</h2>
+      <p>
+        Our platform may integrate with third-party services at the client's direction (Twilio for
+        SMS, Vapi or Retell for voice, Google BigQuery, etc.). Each third-party service operates
+        under its own privacy policy and terms. Clients are responsible for reviewing and accepting
+        those terms. Starbloom does not intermediate or store data passing through these
+        integrations.
+      </p>
+
+      <h2>6. Children's Privacy</h2>
+      <p>
+        Our services are not directed at individuals under the age of 18. We do not knowingly
+        collect information from children.
+      </p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>
+        We may update this privacy policy from time to time. Changes will be posted on this page
+        with an updated effective date. Continued use of the website after changes constitutes
+        acceptance.
+      </p>
+
+      <h2>8. Contact</h2>
+      <p>
+        For questions about this privacy policy, contact us at:
+      </p>
+      <ul>
+        <li>Email: <a href="mailto:fletcher@starbloomconsulting.com">fletcher@starbloomconsulting.com</a></li>
+        <li>Website: <a href="https://starbloomconsulting.com">starbloomconsulting.com</a></li>
+      </ul>
+    </div>
+  </section>
+
+</Layout>

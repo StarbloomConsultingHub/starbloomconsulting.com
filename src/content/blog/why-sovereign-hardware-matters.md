@@ -2,7 +2,7 @@
 title: "Why Sovereign Hardware Matters: The Case Against Cloud AI for Real Operations"
 description: "An operator's argument for running AI on hardware you control. Cloud APIs leak data, drain budgets, and die when the internet does. Private AI doesn't."
 pubDate: 2026-05-02
-author: "Darren"
+author: "Darren Kelly"
 tags:
   - "private AI"
   - "sovereign hardware"

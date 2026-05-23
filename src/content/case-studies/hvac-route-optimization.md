@@ -10,7 +10,7 @@ metrics:
   - "Full ROI achieved in month 3"
 pubDate: 2026-04-15
 heroImage: "/images/case-studies/hvac-fleet.jpg"
-author: "Darren"
+author: "Darren Kelly"
 tags:
   - "route optimization"
   - "fleet management"
