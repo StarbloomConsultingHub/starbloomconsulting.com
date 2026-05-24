@@ -1,7 +1,7 @@
 ---
-// Starbloom Consulting LLC V3.0 — Private Core OS
-// End-Client Edge AI Appliance Landing Page
-// Pre-configured hardware appliance with local LLM, n8n, Cloudflare Tunnel
+// Starbloom Consulting LLC V3.0 — Apex Core
+// End-Client Private AI Infrastructure Landing Page
+// Local lead intake, automations, data orchestration — zero cloud dependency
 // Schema: Product + Offer + FAQPage
 
 import Layout from '../layouts/Layout.astro';
@@ -14,7 +14,7 @@ const tiers = [
     phase3: "$349",
     deploy: "$0",
     deployStandard: "$149",
-    description: "Single-machine Edge AI appliance for small operations. n8n, local LLM, and one Legacy Data Bridge agent.",
+    description: "Local automation — n8n + Ollama + secure tunnel. Workflow automations on one machine.",
     features: [
       "Dockerized n8n automation engine",
       "Local Ollama LLM runner",
@@ -32,7 +32,7 @@ const tiers = [
     phase3: "$499",
     deploy: "$0",
     deployStandard: "$299",
-    description: "Multi-machine orchestration for growing operations. Fleet-wide workflow sync, priority support.",
+    description: "Full 24/7 intake engine + legacy data bridge + unlimited workflows. Multi-machine, all channels.",
     features: [
       "Everything in Foundation",
       "Unlimited workflow automations",
@@ -52,7 +52,7 @@ const addOns = [
     name: "Apex Core — Data Vault",
     price: "$50",
     period: "/month",
-    description: "Encrypted local data lake with BigQuery streaming. Schema-on-read storage for Legacy Data Bridge outputs."
+    description: "Managed BigQuery + Looker Studio dashboards. Automated ETL pipeline, historical trend tracking."
   },
   {
     name: "Apex Signal — White Glove Audit",
@@ -136,9 +136,9 @@ const faqs = [
 ---
 
 <Layout
-  title="Apex Core OS — Private Edge AI Appliance | Starbloom Consulting"
-  description="Your own 24/7 AI employee running on your hardware. Pre-configured n8n workflows, local LLMs, encrypted Cloudflare Tunnel. Zero data leakage. Founders Circle rates from $229/mo."
-  canonicalURL={`${Astro.site}/private-core-os`}
+  title="Apex Core — Private 24/7 AI Workforce | Starbloom Consulting"
+  description="Your own 24/7 AI workforce running on your premises. Local lead intake, automations, and data orchestration. Zero cloud dependency. Founders Circle rates from $229/mo."
+  canonicalURL={`${Astro.site}/apex-core`}
 >
 
   <!-- ════════════════════════════════════
@@ -151,21 +151,20 @@ const faqs = [
 
         <!-- Eyebrow -->
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">
-          Apex Core OS — Private Edge AI Appliance
+          Apex Core — Private AI Infrastructure
         </p>
 
         <!-- Headline -->
         <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white-pure leading-[1.05]">
           Your Private<br />
-          <span class="text-gradient">24/7 AI Employee.</span><br />
-          No Cloud. No Compromise.
+          <span class="text-gradient">24/7 AI Workforce</span><br />
+          On Your Premises.
         </h1>
 
         <!-- Subhead -->
         <p class="mt-6 text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
-          Pre-configured edge appliance that runs automated n8n workflows, conversational AI intake,
-          and legacy data bridge agents on your hardware — with zero data leakage. Outbound-only
-          Cloudflare Tunnel. Air-gapped by default.
+          Apex Core gives you a secure, local AI system that handles lead intake, automations,
+          and data orchestration — with zero cloud dependency for your core operations.
         </p>
 
         <!-- CTAs -->
