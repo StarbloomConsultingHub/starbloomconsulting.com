@@ -1,0 +1,516 @@
+---
+// Starbloom Consulting LLC V3.0 — Private Core OS
+// End-Client Edge AI Appliance Landing Page
+// Pre-configured hardware appliance with local LLM, n8n, Cloudflare Tunnel
+// Schema: Product + Offer + FAQPage
+
+import Layout from '../layouts/Layout.astro';
+
+const tiers = [
+  {
+    name: "Apex Core Foundation",
+    price: "$229",
+    period: "/month",
+    phase3: "$349",
+    deploy: "$0",
+    deployStandard: "$149",
+    description: "Single-machine Edge AI appliance for small operations. n8n, local LLM, and one Legacy Data Bridge agent.",
+    features: [
+      "Dockerized n8n automation engine",
+      "Local Ollama LLM runner",
+      "3 custom workflow automations",
+      "1 Legacy Data Bridge agent",
+      "Cloudflare Tunnel (outbound only)",
+      "Basic health monitoring",
+      "30 days onboarding support"
+    ]
+  },
+  {
+    name: "Apex Core Fleet",
+    price: "$299",
+    period: "/month",
+    phase3: "$499",
+    deploy: "$0",
+    deployStandard: "$299",
+    description: "Multi-machine orchestration for growing operations. Fleet-wide workflow sync, priority support.",
+    features: [
+      "Everything in Foundation",
+      "Unlimited workflow automations",
+      "3 Legacy Data Bridge agents",
+      "Fleet-wide workflow sync & deploy",
+      "Priority health monitoring & alerts",
+      "Multi-machine orchestration",
+      "Premium support (4-hour response)",
+      "Quarterly architecture review"
+    ],
+    featured: true
+  }
+];
+
+const addOns = [
+  {
+    name: "Apex Core — Data Vault",
+    price: "$50",
+    period: "/month",
+    description: "Encrypted local data lake with BigQuery streaming. Schema-on-read storage for Legacy Data Bridge outputs."
+  },
+  {
+    name: "Apex Signal — White Glove Audit",
+    price: "$497",
+    period: "one-time",
+    description: "Full AEO diagnostic of your existing site. Crawl, schema audit, entity mapping, competitive benchmarking."
+  }
+];
+
+const phases = [
+  {
+    phase: "Phase 1 (Now — Oct 2026)",
+    label: "Apex Founders Circle",
+    badge: "Active",
+    badgeClass: "bg-green-600/20 text-green-400 border-green-600/30",
+    details: [
+      "Zero deployment fee — we configure & ship",
+      "Locked-in rates: Foundation $229/mo, Fleet $299/mo",
+      "Priority onboarding (3 business days)",
+      "Direct line to the platform architect",
+      "Roadmap input — your use case shapes the product",
+      "First 25 companies only"
+    ]
+  },
+  {
+    phase: "Phase 2 (Nov 2026 — Apr 2027)",
+    label: "Early Adopter",
+    badge: "Upcoming",
+    badgeClass: "bg-amber-600/20 text-amber-400 border-amber-600/30",
+    details: [
+      "Foundation $149 deploy + $299/mo",
+      "Fleet $299 deploy + $399/mo",
+      "5 business day onboarding",
+      "Standard support channels"
+    ]
+  },
+  {
+    phase: "Phase 3 (May 2027+)",
+    label: "Standard Pricing",
+    badge: "Upcoming",
+    badgeClass: "bg-slate-600/20 text-slate-400 border-slate-600/30",
+    details: [
+      "Foundation $149 deploy + $349/mo",
+      "Fleet $299 deploy + $499/mo",
+      "Standard onboarding queue",
+      "Ticketed support"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "What hardware do I need?",
+    answer: "Foundation tier runs on any modern x86 machine with 16GB+ RAM, 4+ CPU cores, and 256GB SSD. Fleet tier requires 2+ machines with the same spec. We recommend a dedicated mini PC or repurposed workstation. We pre-configure the stack via Docker — no manual software installs required beyond Docker Desktop or Docker Engine."
+  },
+  {
+    question: "Is my data sent to the cloud?",
+    answer: "No. Every model, workflow, and pipeline runs on your local hardware. The only outbound traffic is encrypted tunnel traffic for remote health monitoring and optional BigQuery streaming. You control the data at all times. There are zero inbound ports open."
+  },
+  {
+    question: "What if I need custom workflow integrations?",
+    answer: "Foundation includes 3 custom workflow automations. Fleet includes unlimited workflows. If you need integrations beyond our standard library (CRMs, ERPs, job management tools, IoT feeds), we build them as part of your onboarding. Additional custom integrations are scoped per request."
+  },
+  {
+    question: "Can I cancel anytime?",
+    answer: "Yes — the support subscription is month-to-month with no long-term contract. If you cancel, the appliance continues running as configured. You lose access to remote monitoring, workflow updates, and priority support — but your local stack is unaffected."
+  },
+  {
+    question: "What does onboarding look like?",
+    answer: "Founders Circle members get a dedicated onboarding session within 3 business days of deployment fee waiver confirmation. We walk through your existing workflows, identify automation targets, configure the stack, and train your team. Standard onboarding is a self-guided setup guide with a 30-minute kickoff call."
+  },
+  {
+    question: "Do you sell the hardware?",
+    answer: "Not directly. We recommend hardware specs and can coordinate with our preferred hardware partners for pre-configured machines. You purchase the hardware, we configure the stack. This keeps your deployment under your ownership — no vendor-locked appliances."
+  },
+  {
+    question: "Can I add more agents or automations later?",
+    answer: "Yes — the platform is designed to scale. Foundation caps at 3 automations and 1 data bridge agent. Fleet is unlimited on automations and includes 3 agents. You can upgrade from Foundation to Fleet at any time; we prorate the difference."
+  }
+];
+---
+
+<Layout
+  title="Apex Core OS — Private Edge AI Appliance | Starbloom Consulting"
+  description="Your own 24/7 AI employee running on your hardware. Pre-configured n8n workflows, local LLMs, encrypted Cloudflare Tunnel. Zero data leakage. Founders Circle rates from $229/mo."
+  canonicalURL={`${Astro.site}/private-core-os`}
+>
+
+  <!-- ════════════════════════════════════
+       HERO
+       ════════════════════════════════════ -->
+  <section class="relative overflow-hidden border-b border-slate-700/30" aria-labelledby="hero-heading">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-cyan-500/5 to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="container-site py-24 md:py-28 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+
+        <!-- Eyebrow -->
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+          Apex Core OS — Private Edge AI Appliance
+        </p>
+
+        <!-- Headline -->
+        <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white-pure leading-[1.05]">
+          Your Private<br />
+          <span class="text-gradient">24/7 AI Employee.</span><br />
+          No Cloud. No Bullshit.
+        </h1>
+
+        <!-- Subhead -->
+        <p class="mt-6 text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
+          Pre-configured edge appliance that runs automated n8n workflows, conversational AI intake,
+          and legacy data bridge agents on your hardware — with zero data leakage. Outbound-only
+          Cloudflare Tunnel. Air-gapped by default.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-lg shadow-blue-600/25 hover:bg-blue-600 transition-all duration-200">
+            Lock In Founders Circle Rate
+          </a>
+          <a href="/pricing" class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-slate-700 text-text-muted font-semibold hover:text-white-pure hover:border-accent transition-all duration-200">
+            Compare Plans
+          </a>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-text-muted">
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Air-gapped by default
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><polyline points="20 6 9 17 4 12"/></svg>
+            Your hardware, our stack
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Pre-configured Docker stack
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            30-minute onboarding
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PRICING TIERS
+       ════════════════════════════════════ -->
+  <section class="container-site py-20" aria-labelledby="tiers-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="tiers-heading" class="text-3xl md:text-4xl font-black text-white-pure text-center tracking-tight">
+        Apex Core <span class="text-gradient">Pricing</span>
+      </h2>
+      <p class="mt-4 text-center text-text-muted text-sm max-w-xl mx-auto">
+        Founders Circle rates locked for the first 25 companies. Transparent, flat, no surprises.
+      </p>
+
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {tiers.map((tier) => (
+          <div class={`card-surface flex flex-col relative overflow-hidden ${tier.featured ? 'glow-border ring-1 ring-blue-600/30 scale-[1.02]' : ''}`}>
+            {tier.featured && (
+              <span class="self-start px-3 py-1 mb-4 rounded-full bg-blue-600/20 text-accent text-xs font-bold uppercase tracking-wider">
+                Recommended
+              </span>
+            )}
+            <h3 class="text-xl font-bold text-white-pure">{tier.name}</h3>
+            <div class="mt-2">
+              <span class="text-4xl font-black text-white-pure">{tier.price}</span>
+              <span class="text-text-muted text-sm">{tier.period}</span>
+            </div>
+            <p class="mt-1 text-sm text-text-muted">
+              <span class="font-semibold text-white-pure">{tier.deploy}</span> deployment fee
+              <span class="text-xs text-slate-500"> (normally {tier.deployStandard})</span>
+            </p>
+            <p class="mt-1 text-xs text-slate-500">
+              Phase 3: {tier.phase3}/mo
+            </p>
+            <p class="mt-3 text-sm text-text-muted leading-relaxed">
+              {tier.description}
+            </p>
+            <ul class="mt-6 space-y-2.5 flex-1 text-sm text-text-muted">
+              {tier.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/contact"
+              class={`mt-8 inline-flex items-center justify-center w-full px-6 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${tier.featured ? 'bg-accent text-white-pure shadow-lg shadow-blue-600/25 hover:bg-blue-600' : 'border border-slate-700 text-text-muted hover:text-white-pure hover:border-accent'}`}
+            >
+              Lock In Founders Circle Rate
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       ADD-ONS
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="addons-heading">
+    <div class="container-site py-20">
+      <div class="max-w-4xl mx-auto">
+        <h2 id="addons-heading" class="text-3xl font-black text-white-pure text-center tracking-tight">
+          Add-Ons &amp; <span class="text-gradient">Extras</span>
+        </h2>
+        <p class="mt-4 text-center text-text-muted text-sm max-w-lg mx-auto">
+          Optional upgrades that slot into your existing Apex Core subscription.
+        </p>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {addOns.map((addon) => (
+            <div class="card-surface">
+              <h3 class="text-lg font-bold text-white-pure">{addon.name}</h3>
+              <div class="mt-1">
+                <span class="text-2xl font-black text-white-pure">{addon.price}</span>
+                <span class="text-text-muted text-sm">{addon.period}</span>
+              </div>
+              <p class="mt-2 text-sm text-text-muted leading-relaxed">{addon.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FOUNDERS CIRCLE OVERVIEW
+       ════════════════════════════════════ -->
+  <section class="container-site py-20" aria-labelledby="fc-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="fc-heading" class="text-3xl md:text-4xl font-black text-white-pure text-center tracking-tight">
+        Pricing Timeline &mdash; <span class="text-gradient">Lock In Now</span>
+      </h2>
+      <p class="mt-4 text-center text-text-muted text-sm max-w-lg mx-auto">
+        Three phases of Apex Core pricing. Founders Circle pricing locks in the lowest rate permanently
+        for your subscription duration.
+      </p>
+
+      <div class="mt-12 space-y-6">
+        {phases.map((phase) => (
+          <div class="card-surface">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-bold text-white-pure">{phase.phase}</h3>
+                <p class="text-sm text-text-muted mt-1">{phase.label}</p>
+              </div>
+              <span class={`inline-flex self-start px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${phase.badgeClass}`}>
+                {phase.badge}
+              </span>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-text-muted">
+              {phase.details.map((detail) => (
+                <li class="flex items-start gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PROBLEM / SOLUTION
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="problem-heading">
+    <div class="container-site py-20">
+      <div class="max-w-4xl mx-auto">
+        <h2 id="problem-heading" class="text-3xl font-black text-white-pure text-center tracking-tight">
+          The Problem <span class="text-gradient">We Solve</span>
+        </h2>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card-surface text-center">
+            <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white-pure">Missed Leads</h3>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed">
+              Every missed call after hours is a job you didn't get booked. Every voicemail tag
+              is a lead lost to friction. Your crew sleeps while your competitors' intake keeps running.
+            </p>
+          </div>
+
+          <div class="card-surface text-center">
+            <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white-pure">Manual Data Entry</h3>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed">
+              Your crew writes job details on paper. Someone transcribes to the CRM. Someone else
+              sends invoices. Every handoff is a chance for errors, delays, and lost information.
+            </p>
+          </div>
+
+          <div class="card-surface text-center">
+            <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="text-lg font-bold text-white-pure">Expensive SaaS Sprawl</h3>
+            <p class="mt-2 text-sm text-text-muted leading-relaxed">
+              $3,000&ndash;$4,000 per month in SaaS tools that don't talk to each other. Separate
+              logins, separate spreadsheets, separate data silos. You're paying more for worse results.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 card-surface text-center">
+          <p class="text-lg font-semibold text-white-pure">
+            Apex Core replaces all of it with one local appliance.
+          </p>
+          <p class="mt-2 text-sm text-text-muted">
+            Fractional headcount cost &mdash; compare to $3,000&ndash;$4,000/mo for a human + SaaS stack.
+            Apex Core is $229&ndash;$299/mo with zero data leakage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       HYBRID ARCHITECTURE DISCLOSURE
+       ════════════════════════════════════ -->
+  <section class="container-site py-20" aria-labelledby="arch-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="arch-heading" class="text-3xl font-black text-white-pure text-center tracking-tight">
+        How the <span class="text-gradient">Architecture</span> Works
+      </h2>
+      <p class="mt-4 text-center text-text-muted text-sm max-w-xl mx-auto">
+        Transparent about what's local, what's edge, and what touches the public internet.
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card-surface">
+          <div class="flex items-center gap-3 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h3 class="text-lg font-bold text-white-pure">100% Local (Your Hardware)</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>n8n workflow execution</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>LLM inference (Ollama)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Legacy Data Bridge (vision-RPA)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>All data storage &amp; processing</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card-surface">
+          <div class="flex items-center gap-3 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <h3 class="text-lg font-bold text-white-pure">Public Edge (Optional)</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-text-muted">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>AI Voice intake via Vapi / Retell API</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>SMS / Twilio webhooks</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>BigQuery streaming (opt-in analytics)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400 mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Remote health monitoring (outbound only)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-6 text-center text-xs text-text-muted">
+        Public edge channels touch third-party APIs. Your <strong class="text-white-pure">core data</strong> never leaves your hardware.
+        Full hybrid architecture details available in our documentation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FAQ
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-t border-slate-700/30" aria-labelledby="faq-heading">
+    <div class="container-site py-20">
+      <div class="max-w-3xl mx-auto">
+        <h2 id="faq-heading" class="text-3xl font-black text-white-pure text-center tracking-tight">
+          Frequently Asked <span class="text-gradient">Questions</span>
+        </h2>
+
+        <div class="mt-10 space-y-4">
+          {faqs.map((faq, idx) => (
+            <details class="card-surface group open:ring-1 open:ring-blue-600/30 transition-all duration-200">
+              <summary class="flex items-center justify-between cursor-pointer text-white-pure font-medium text-sm">
+                <span>{faq.question}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <p class="mt-4 text-sm text-text-muted leading-relaxed">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FINAL CTA
+       ════════════════════════════════════ -->
+  <section class="container-site py-20 text-center" aria-labelledby="final-cta-heading">
+    <div class="max-w-2xl mx-auto">
+      <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-600/15 border border-blue-600/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+        Apex Founders Circle — Limited to First 25 Companies
+      </div>
+      <h2 id="final-cta-heading" class="text-3xl md:text-4xl font-black text-white-pure tracking-tight">
+        Ready to Deploy Your <span class="text-gradient">Private AI Employee?</span>
+      </h2>
+      <p class="mt-4 text-text-muted text-base max-w-xl mx-auto">
+        Lock in Founders Circle pricing now. Zero deployment fee, locked rates, direct access to the
+        platform architect. First 25 companies only.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-2xl shadow-blue-600/30 hover:bg-blue-600 transition-all duration-200 hover:shadow-blue-500/50 hover:-translate-y-0.5"
+          Lock In Founders Circle Pricing
+        </a>
+        <a
+          href="/about"
+          class="inline-flex items-center justify-center px-10 py-5 rounded-xl border border-slate-700 text-text-muted font-bold text-lg hover:text-white-pure hover:border-accent transition-all duration-200"
+        >
+          Learn More About the Platform
+        </a>
+      </div>
+      <p class="mt-4 text-xs text-text-muted">
+        No checkout. No credit card. Founders Circle application.
+      </p>
+    </div>
+  </section>
+
+</Layout>
