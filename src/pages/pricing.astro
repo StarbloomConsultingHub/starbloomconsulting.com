@@ -1,0 +1,280 @@
+---
+// Starbloom Consulting LLC V3.0 — Pricing Page
+// Apex Pricing — Transparent & Fair
+// Phase 1 Founders Circle rates with price increase timeline
+
+import Layout from '../layouts/Layout.astro';
+
+const products = [
+  {
+    name: "Apex Signal — One-Off",
+    price: "$497",
+    period: "one-time",
+    phase2: "$797",
+    phase3: "$1,197 – $1,497",
+    description: "Full AEO site diagnostic — crawl, schema, entity audit, and deployable markup",
+    features: [
+      "Full site crawl & schema audit",
+      "Entity coverage mapping",
+      "Competitive benchmarking",
+      "Deployable JSON-LD payload",
+      "Prioritized content briefs",
+      "Delivered in 72 hours"
+    ]
+  },
+  {
+    name: "Apex Signal Agency",
+    price: "$797",
+    period: "/month",
+    phase2: "$997",
+    phase3: "$1,399",
+    description: "5 white-labeled AEO reports per month + agency portal",
+    features: [
+      "5 full Apex Signal reports per month",
+      "White-label portal with report history",
+      "Extra reports: $349 each",
+      "48–72 hour turnaround",
+      "Priority support",
+      "Agency-wide client management"
+    ],
+    featured: true
+  },
+  {
+    name: "Apex Core Foundation",
+    price: "$229",
+    period: "/month",
+    phase2: "$299",
+    phase3: "$349",
+    description: "Local automation stack — n8n + Ollama + secure tunnel",
+    features: [
+      "Dockerized n8n automation engine",
+      "Local model runner (Ollama)",
+      "3 custom workflow automations",
+      "Basic monitoring & health checks",
+      "Cloudflare Tunnel connectivity",
+      "30 days onboarding support"
+    ]
+  },
+  {
+    name: "Apex Core Fleet",
+    price: "$299",
+    period: "/month",
+    phase2: "$399",
+    phase3: "$499",
+    description: "Full 24/7 intake engine + legacy data bridge + unlimited workflows",
+    features: [
+      "Everything in Foundation",
+      "24/7 AI voice & SMS intake engine",
+      "Legacy data bridge (vision-RPA)",
+      "BigQuery + Looker Studio dashboards",
+      "Unlimited workflow automations",
+      "Up to 2 machines"
+    ]
+  },
+  {
+    name: "Apex Core — Data Vault",
+    price: "+$50",
+    period: "/month",
+    phase2: "+$50",
+    phase3: "+$75",
+    description: "Managed BigQuery + Looker Studio dashboard add-on",
+    features: [
+      "Dedicated BigQuery dataset",
+      "Custom Looker Studio dashboards",
+      "Automated ETL pipeline",
+      "Historical trend tracking",
+      "Exportable reports"
+    ],
+    addon: true
+  }
+];
+
+const timeline = [
+  { phase: "Phase 1", timeframe: "Now – October 2026", change: "Founders Circle pricing (lowest rates ever offered)" },
+  { phase: "Phase 2", timeframe: "November 2026 – April 2027", change: "Moderate increases (+25–30% across the board)" },
+  { phase: "Phase 3", timeframe: "May 2027 onward", change: "Full standard pricing (highest rates)" }
+];
+
+const foundersBenefits = [
+  "Lowest lifetime pricing — locked in for as long as you subscribe",
+  "Priority support — faster response times and direct architect access",
+  "Direct influence on product roadmap — your feedback shapes what we build",
+  "Optional case study opportunity — be featured as a launch partner"
+];
+---
+
+<Layout
+  title="Apex Pricing — Transparent & Fair | Starbloom Consulting"
+  description="Apex Signal and Apex Core pricing. Founders Circle rates from $229/month. No per-seat licensing, no usage-based billing, no surprise invoices."
+  canonicalURL={`${Astro.site}/pricing`}
+>
+
+  <!-- ════════════════════════════════════
+       HERO
+       ════════════════════════════════════ -->
+  <section class="container-site py-24 md:py-28 text-center" aria-labelledby="pricing-heading">
+    <div class="max-w-3xl mx-auto">
+      <h1 id="pricing-heading" class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white-pure leading-[1.05]">
+        Apex Pricing —<br />
+        <span class="text-gradient">Transparent &amp; Fair.</span>
+      </h1>
+      <p class="mt-6 text-lg text-text-muted max-w-xl mx-auto">
+        No per-seat licensing. No usage-based billing. No surprise invoices.
+        Flat, upfront, transparent pricing — currently at Founders Circle rates.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PRICING TABLE
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="current-pricing-heading">
+    <div class="container-site py-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-block px-4 py-1.5 mb-4 rounded-full bg-blue-600/15 border border-blue-600/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+            Phase 1 — Apex Founders Circle
+          </span>
+          <h2 id="current-pricing-heading" class="text-2xl md:text-3xl font-black text-white-pure tracking-tight">
+            Current Pricing <span class="text-gradient">(Now – October 2026)</span>
+          </h2>
+        </div>
+
+        <!-- Pricing grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map(product => (
+            <div class={`card-surface flex flex-col ${product.featured ? 'glow-border ring-1 ring-blue-600/30 scale-[1.02] lg:scale-105' : ''} ${product.addon ? 'bg-slate-900/80 border-dashed border-slate-600' : ''}`}>
+              {product.featured && (
+                <span class="self-start px-3 py-1 mb-3 rounded-full bg-blue-600/20 text-accent text-xs font-bold uppercase tracking-wider">
+                  Most Popular
+                </span>
+              )}
+              {product.addon && (
+                <span class="self-start px-3 py-1 mb-3 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-wider">
+                  Add-on
+                </span>
+              )}
+
+              <h3 class="text-lg font-bold text-white-pure">{product.name}</h3>
+
+              <div class="mt-2">
+                <span class="text-3xl font-black text-white-pure">{product.price}</span>
+                <span class="text-text-muted text-sm">{product.period}</span>
+                <p class="text-xs font-medium text-text-muted mt-1">{product.description}</p>
+              </div>
+
+              <ul class="mt-5 space-y-2 flex-1">
+                {product.features.map(f => (
+                  <li class="flex items-start gap-2 text-xs text-text-muted">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="/contact"
+                class={`mt-6 inline-flex items-center justify-center w-full px-5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
+                  product.featured
+                    ? 'bg-accent text-white-pure shadow-lg shadow-blue-600/25 hover:bg-blue-600'
+                    : 'border border-slate-600 text-white-pure hover:border-accent hover:text-accent'
+                }`}
+              >
+                {product.addon ? 'Add to Apex Core Subscription' : 'Lock In Founders Circle Rate'}
+              </a>
+
+              {!product.addon && (
+                <div class="mt-3 pt-3 border-t border-slate-700/30">
+                  <p class="text-xs text-slate-500">
+                    <strong class="text-text-muted">Phase 2:</strong> {product.phase2}
+                    <span class="block"><strong class="text-text-muted">Phase 3:</strong> {product.phase3}</span>
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <p class="mt-8 text-center text-xs text-text-muted">
+          Deployment fees waived during Founders Circle (normally $149–$299).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PRICE INCREASE TIMELINE
+       ════════════════════════════════════ -->
+  <section class="container-site py-20" aria-labelledby="timeline-heading">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="timeline-heading" class="text-2xl md:text-3xl font-black text-white-pure text-center tracking-tight">
+        Price Increase <span class="text-gradient">Timeline</span>
+      </h2>
+
+      <div class="mt-12 space-y-4">
+        {timeline.map(phase => (
+          <div class="card-surface flex flex-col sm:flex-row sm:items-center gap-4 p-5">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full bg-blue-600/20 text-accent text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+                {phase.phase}
+              </span>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm font-semibold text-white-pure">{phase.timeframe}</p>
+              <p class="text-xs text-text-muted mt-0.5">{phase.change}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 p-5 card-surface border-l-4 border-accent">
+        <p class="text-sm text-text-muted leading-relaxed">
+          <strong class="text-white-pure">Why we increase prices:</strong> We're giving early adopters the best rates in
+          exchange for feedback and case studies. As we add more features and refine the system,
+          the value increases — so does the price. Founders Circle members keep their low rates
+          for the lifetime of their subscription.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FOUNDERS CIRCLE
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="founders-heading">
+    <div class="container-site py-20">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-600/15 border border-blue-600/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+          Available Until October 2026
+        </span>
+
+        <h2 id="founders-heading" class="text-3xl font-black text-white-pure tracking-tight">
+          Apex <span class="text-gradient">Founders Circle</span>
+        </h2>
+
+        <p class="mt-4 text-text-muted max-w-lg mx-auto">
+          Lock in the lowest rates Starbloom Consulting will ever offer. Founders Circle members
+          keep their pricing for as long as they subscribe.
+        </p>
+
+        <ul class="mt-8 space-y-3 text-left max-w-md mx-auto">
+          {foundersBenefits.map((benefit, i) => (
+            <li class="flex items-start gap-3 text-sm text-text-muted">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-accent/20 text-accent text-xs font-black flex-shrink-0">
+                {i + 1}
+              </span>
+              <span>{benefit}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href="/contact" class="mt-10 inline-flex items-center justify-center px-8 py-4 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-lg shadow-blue-600/25 hover:bg-blue-600 transition-all duration-200">
+          Lock In Founders Circle Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

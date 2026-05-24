@@ -1,0 +1,294 @@
+---
+// Starbloom Consulting LLC V3.0 — Apex Signal Agency
+// White-Label AEO Audits for Agencies
+// Founders Circle pricing preserved for crawlers
+
+import Layout from '../layouts/Layout.astro';
+
+const service = {
+  name: "Apex Signal Agency",
+  tagline: "Make your clients citable by AI — without doing the work.",
+  provider: "Starbloom Consulting LLC",
+  priceCurrency: "USD",
+  foundersPrice: "797.00",
+  standardPrice: "1399.00",
+  reportsIncluded: 5,
+  extraReportPrice: "349.00",
+  deliveryFormat: "White-labeled PDF reports + implementation blueprints",
+  turnaround: "48–72 hours per report"
+};
+
+const howItWorks = [
+  {
+    step: "1",
+    title: "We Run Deep AEO Audits",
+    body: "We crawl your clients' sites using the Apex Signal pipeline — schema validation, entity coverage maps, semantic gap analysis, and competitive benchmarking."
+  },
+  {
+    step: "2",
+    title: "You Receive White-Labeled Reports",
+    body: "Every report ships clean — no Starbloom branding in the body. Your logo, your presentation, your client relationship protected."
+  },
+  {
+    step: "3",
+    title: "Your Team Presents & Closes",
+    body: "You add strategic recommendations on top of the technical data. We stay invisible. You own the relationship and the revenue."
+  }
+];
+
+const agencyBenefits = [
+  "Increase average project value by $1,500–$3,000 per client",
+  "Differentiate against competitors who can't deliver technical AEO depth",
+  "No hiring — pipeline talent included in every subscription",
+  "Quarterly benchmarking shows compounding ROI to clients",
+  "White-label portal with full report history and client management"
+];
+
+const faqs = [
+  {
+    question: "Can I resell these reports under my own brand?",
+    answer: "Yes — Apex Signal Agency is explicitly designed for agency white-label use. The PDF ships clean with no Starbloom branding in the body. You add your strategic recommendations, bill your client at your own rate, and we remain your technical engine."
+  },
+  {
+    question: "What does a full Apex Signal audit cover?",
+    answer: "Every report includes: full site crawl with broken link/redirect analysis, Schema.org JSON-LD audit across all relevant entity types, entity coverage mapping (Organization, Person, Product, FAQ, LocalBusiness), semantic HTML5 structure review, Core Web Vitals snapshot, content heading hierarchy analysis, competitive entity benchmarking against top 3 competitors, and deployable JSON-LD markup generation with prioritized content briefs."
+  },
+  {
+    question: "How many reports can I get per month?",
+    answer: "Your subscription includes 5 full Apex Signal reports per month. Additional reports are $349 each. Volume discounts are available for agencies consistently ordering 10+ reports per month."
+  },
+  {
+    question: "What's the turnaround time?",
+    answer: "Standard turnaround is 48–72 hours from report initiation. Rush delivery (24 hours) is available on request."
+  },
+  {
+    question: "What happens after the Founders Circle period?",
+    answer: "Founders Circle rate of $797/month is locked for the first 6 months (through October 2026). After that, standard pricing of $1,399/month applies. Founders Circle members retain priority support and roadmap input for the lifetime of their subscription."
+  }
+];
+---
+
+<Layout
+  title="Apex Signal Agency — White-Label AEO Audits for Agencies"
+  description="Resell white-labeled Apex Signal AEO audits to your agency clients. 5 reports per month, $797/month through Founders Circle. Full technical diagnostics your clients can't get anywhere else."
+  canonicalURL={`${Astro.site}/apex-signal-agency`}
+>
+
+  <!-- ════════════════════════════════════
+       HERO
+       ════════════════════════════════════ -->
+  <section class="relative overflow-hidden" aria-labelledby="hero-heading">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+    <div class="container-site py-24 md:py-28 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+
+        <!-- Eyebrow -->
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent mb-4">
+          Agency Partnership
+        </p>
+
+        <!-- Headline -->
+        <h1 id="hero-heading" class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white-pure leading-[1.05]">
+          Make Your Clients<br />
+          <span class="text-gradient">Citable by AI</span><br />
+          Without Doing the Work.
+        </h1>
+
+        <!-- Subhead -->
+        <p class="mt-6 text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
+          Apex Signal Agency gives you 5 white-labeled AEO audits per month so you can deliver
+          premium AI visibility services to your clients — while we do all the heavy lifting.
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-lg shadow-blue-600/25 hover:bg-blue-600 transition-all duration-200">
+            Start 14-Day Free Trial
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-slate-700 text-text-muted font-semibold hover:text-white-pure hover:border-accent transition-all duration-200">
+            Watch 2-Minute Demo
+          </a>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-text-muted">
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><polyline points="20 6 9 17 4 12"/></svg>
+            White-label — no Starbloom branding
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            5 reports per month
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Founders Circle rate locked
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PRICING BLOCK
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="pricing-heading">
+    <div class="container-site py-20">
+      <div class="max-w-lg mx-auto text-center">
+        <div class="card-surface glow-border ring-1 ring-blue-600/30 p-8">
+
+          <!-- Founders Circle badge -->
+          <span class="inline-block px-3 py-1 mb-4 rounded-full bg-blue-600/20 text-accent text-xs font-bold uppercase tracking-wider">
+            Apex Founders Circle
+          </span>
+
+          <h3 class="text-xl font-bold text-white-pure">Apex Signal Agency</h3>
+
+          <div class="mt-4">
+            <span class="text-4xl font-black text-white-pure">$797</span>
+            <span class="text-text-muted"> /month</span>
+          </div>
+
+          <p class="mt-2 text-xs text-text-muted">
+            Founders Circle rate — locked through October 2026
+          </p>
+
+          <p class="mt-1 text-xs text-slate-500">
+            Then $1,399/month standard pricing
+          </p>
+
+          <ul class="mt-6 space-y-2.5 text-sm text-text-muted text-left">
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong class="text-white-pure">5</strong> full Apex Signal reports per month</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Extra reports: <strong class="text-white-pure">$349</strong> each</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>White-label portal with full report history</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>48–72 hour turnaround per report</span>
+            </li>
+          </ul>
+
+          <a href="/contact" class="mt-8 inline-flex items-center justify-center w-full px-6 py-3 rounded-xl bg-accent text-white-pure font-bold text-sm transition-all duration-200 shadow-lg shadow-blue-600/25 hover:bg-blue-600">
+            Start 14-Day Free Trial
+          </a>
+
+          <p class="mt-3 text-xs text-text-muted">
+            No commitment. Cancel anytime during trial.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       HOW IT WORKS
+       ════════════════════════════════════ -->
+  <section class="container-site py-20" aria-labelledby="how-heading">
+    <div class="max-w-4xl mx-auto">
+      <h2 id="how-heading" class="text-3xl md:text-4xl font-black text-white-pure text-center tracking-tight">
+        Three Steps. <span class="text-gradient">Zero Overhead.</span>
+      </h2>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {howItWorks.map(step => (
+          <div class="card-surface flex flex-col items-center text-center p-6">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/20 text-accent font-black text-lg mb-4">
+              {step.step}
+            </span>
+            <h3 class="text-lg font-bold text-white-pure mb-2">{step.title}</h3>
+            <p class="text-sm text-text-muted leading-relaxed">{step.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       VALUE PROPOSITION
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30" aria-labelledby="value-heading">
+    <div class="container-site py-20">
+      <div class="max-w-4xl mx-auto">
+        <h2 id="value-heading" class="text-3xl font-black text-white-pure text-center tracking-tight mb-12">
+          What Adding Apex Signal <span class="text-gradient">Does for Your Agency</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {agencyBenefits.map(benefit => (
+            <div class="flex items-start gap-3 text-sm text-text-muted p-4 card-surface">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent mt-0.5 flex-shrink-0">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+              <span>{benefit}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Testimonial Placeholder -->
+        <div class="mt-12 p-6 card-surface border-l-4 border-accent">
+          <p class="text-sm text-text-muted italic leading-relaxed">
+            "Adding Apex Signal to our offering increased our average project value by 47% in the first quarter."
+          </p>
+          <p class="mt-3 text-xs font-semibold text-white-pure">
+            — Agency Owner, Beta Cohort
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FAQ
+       ════════════════════════════════════ -->
+  <section class="container-site py-20" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="faq-heading" class="text-3xl font-black text-white-pure text-center tracking-tight mb-12">
+        Common Questions
+      </h2>
+
+      <div class="space-y-4">
+        {faqs.map(faq => (
+          <details class="card-surface group">
+            <summary class="flex items-center justify-between cursor-pointer p-4 text-sm font-semibold text-white-pure">
+              {faq.question}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-text-muted group-open:rotate-180 transition-transform">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <div class="px-4 pb-4 text-sm text-text-muted leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       CTA
+       ════════════════════════════════════ -->
+  <section class="bg-slate-900/50 border-y border-slate-700/30 py-20 text-center" aria-labelledby="cta-heading">
+    <div class="container-site">
+      <h2 id="cta-heading" class="text-3xl font-black text-white-pure tracking-tight">
+        Ready to Add <span class="text-gradient">$1,500–$3,000</span> Per Client?
+      </h2>
+      <p class="mt-4 text-text-muted max-w-lg mx-auto">
+        Start your 14-day free trial. No credit card required.
+      </p>
+      <a href="/contact" class="mt-8 inline-flex items-center justify-center px-8 py-4 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-lg shadow-blue-600/25 hover:bg-blue-600 transition-all duration-200">
+        Start 14-Day Free Trial
+      </a>
+    </div>
+  </section>
+
+</Layout>
