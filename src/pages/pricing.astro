@@ -20,7 +20,8 @@ const products = [
       "Deployable JSON-LD payload",
       "Prioritized content briefs",
       "Delivered in 72 hours"
-    ]
+    ],
+    checkoutUrl: "https://buy.stripe.com/28E7sLcSS3qwcrI5T44ow01"
   },
   {
     name: "Apex Signal Agency",
@@ -37,7 +38,8 @@ const products = [
       "Priority support",
       "Agency-wide client management"
     ],
-    featured: true
+    featured: true,
+    checkoutUrl: "https://buy.stripe.com/3cI6oH0664uAcrIgxI4ow02"
   },
   {
     name: "Apex Core Foundation",
@@ -53,7 +55,8 @@ const products = [
       "Basic monitoring & health checks",
       "Cloudflare Tunnel connectivity",
       "30 days onboarding support"
-    ]
+    ],
+    checkoutUrl: "https://buy.stripe.com/fZucN5cSS5yEdvMa9k4ow03"
   },
   {
     name: "Apex Core Fleet",
@@ -69,7 +72,8 @@ const products = [
       "BigQuery + Looker Studio dashboards",
       "Unlimited workflow automations",
       "Up to 2 machines"
-    ]
+    ],
+    checkoutUrl: "https://buy.stripe.com/28EeVdaKK6CIezQ5T44ow04"
   },
   {
     name: "Apex Core — Data Vault",
@@ -85,7 +89,8 @@ const products = [
       "Historical trend tracking",
       "Exportable reports"
     ],
-    addon: true
+    addon: true,
+    checkoutUrl: "https://buy.stripe.com/8x228rg549OU8bs4P04ow05"
   }
 ];
 
@@ -175,7 +180,8 @@ const foundersBenefits = [
               </ul>
 
               <a
-                href="/contact"
+                href={product.checkoutUrl}
+                target="_blank"
                 class={`mt-6 inline-flex items-center justify-center w-full px-5 py-2.5 rounded-xl font-bold text-xs transition-all duration-200 ${
                   product.featured
                     ? 'bg-accent text-white-pure shadow-lg shadow-blue-600/25 hover:bg-blue-600'
@@ -270,7 +276,7 @@ const foundersBenefits = [
           ))}
         </ul>
 
-        <a href="/contact" class="mt-10 inline-flex items-center justify-center px-8 py-4 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-lg shadow-blue-600/25 hover:bg-blue-600 transition-all duration-200">
+        <a href="https://buy.stripe.com/3cI6oH0664uAcrIgxI4ow02" target="_blank" class="mt-10 inline-flex items-center justify-center px-8 py-4 rounded-xl bg-accent text-white-pure font-bold text-lg shadow-lg shadow-blue-600/25 hover:bg-blue-600 transition-all duration-200">
           Lock In Founders Circle Pricing
         </a>
       </div>
