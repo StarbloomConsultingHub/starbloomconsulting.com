@@ -18,6 +18,10 @@
   --color-blue-400: #60a5fa;
   --color-blue-300: #93bbfd;
 
+  --color-navy-700: #152033;
+  --color-navy-800: #1a2744;
+  --color-navy-900: #0f1729;
+
   --color-cyan-500: #06b6d4;
   --color-cyan-400: #22d3ee;
 
@@ -30,7 +34,7 @@
 
   /* ── Semantic Aliases ── */
   --color-brand: var(--color-blue-500);
-  --color-brand-deep: var(--color-blue-600);
+  --color-brand-deep: var(--color-navy-800);
   --color-brand-glow: var(--color-blue-400);
   --color-surface-dark: var(--color-slate-950);
   --color-surface-mid: var(--color-slate-900);
