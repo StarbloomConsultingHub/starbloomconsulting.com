@@ -5,6 +5,8 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const entries = await getCollection('caseStudies');
   return entries.map(entry => ({
