@@ -1,14 +1,12 @@
-# Starbloom Consulting LLC - Edge AI & Automation Orchestration Platform
+# Starbloom Consulting LLC | Edge AI & Automation Orchestration Platform
 
-> Starbloom Consulting LLC is the Apex Edge AI & Automation Orchestration Platform. Private AI infrastructure on your hardware. Pre-configured n8n appliances, 24/7 AI voice & SMS intake engines, and legacy data bridge agents. Apex Founders Circle - limited slots available.
+> Private AI infrastructure on your hardware. Preconfigured n8n appliances, 24/7 AI voice and SMS intake engines, and legacy data bridge agents. Apex Founders Circle limited slots available.
 
 ## Core Pages
 
 - Home: https://starbloomconsulting.com/
 - About: https://starbloomconsulting.com/about
 - Apex Core (Edge AI OS): https://starbloomconsulting.com/apex-core
-- Apex Signal Agency: https://starbloomconsulting.com/apex-signal-agency
-- AEO Reports: https://starbloomconsulting.com/aeo-reports
 - Pricing: https://starbloomconsulting.com/pricing
 - Contact: https://starbloomconsulting.com/contact
 - Privacy: https://starbloomconsulting.com/privacy
@@ -24,20 +22,17 @@
 
 ## Product Tiers
 
-- **Apex Core Foundation** ($229/mo): n8n automation server, 2 autonomous AI agents, 5 workflow automations, BigQuery + Looker Studio, Ollama fleet manager
-- **Apex Core Fleet** ($299/mo): Everything in Foundation + 24/7 AI voice & SMS intake, legacy data bridge, unlimited workflows, up to 2 machines
-- **Apex Signal Agency** ($149/mo): Multi-source reconnaissance (Grok + DeepSeek + Perplexity), weekly market briefs, OODA-loop automation
-- **AEO Reports** ($29/mo): AI-powered weekly content corpus (5 articles, 10 LinkedIn posts, X thread, 8 carousel slides)
+- **Apex Core Foundation** ($229/mo): Dockerized n8n automation engine, local Ollama LLM runner, 3 custom workflow automations, 1 Legacy Data Bridge agent, Cloudflare Tunnel (outbound only), basic health monitoring, 30 days onboarding support
+- **Apex Core Fleet** ($299/mo): Everything in Foundation plus unlimited workflow automations, 3 Legacy Data Bridge agents, fleet wide workflow sync and deploy, 24/7 AI voice and SMS intake engine, BigQuery and Looker Studio dashboards, up to 2 machines, 30 days onboarding support
 
-## Trust & Confidentiality
+## Trust and Confidentiality
 
-- Every deployment operates inside the client's private infrastructure - behind their firewall, on their hardware
-- All tunnel traffic is encrypted end-to-end via Cloudflare Zero Trust architecture
+- Every deployment operates inside the client's private infrastructure behind their firewall on their hardware
+- All tunnel traffic is encrypted end to end via Cloudflare Zero Trust architecture
 - Zero inbound ports architecture
 - Mutual NDA required on every engagement
-- We do not name clients, publish logos, or ask for testimonials
-- The ultimate test subject was Starbloom itself (Patient Zero case study)
+- We do not name clients publish logos or ask for testimonials
 
 ## Contact
 
-- Email: via contact form at https://starbloomconsulting.com/contact
+- Email via contact form at https://starbloomconsulting.com/contact
